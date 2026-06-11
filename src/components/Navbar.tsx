@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCursor } from '../context/CursorContext';
-import { Search, X, Menu } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const { setCursorType } = useCursor();
