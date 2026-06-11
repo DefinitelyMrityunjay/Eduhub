@@ -5,7 +5,7 @@ import { CustomCursor } from './components/CustomCursor';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Countries } from './components/Countries';
-import { Storytelling } from './components/Storytelling';
+
 import { UniversityShowcase } from './components/UniversityShowcase';
 import { Scholarships } from './components/Scholarships';
 import { Statistics } from './components/Statistics';
@@ -50,8 +50,6 @@ function App() {
           {/* 3. Statistics — Proof of scale */}
           <Statistics />
 
-          {/* 4. Cinematic storytelling — Dream to Degree */}
-          <Storytelling />
 
           {/* 5. University Showcase — Elite institutions grid + marquee */}
           <UniversityShowcase />

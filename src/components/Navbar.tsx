@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useCursor } from '../context/CursorContext';
 import { Search } from 'lucide-react';
 
@@ -20,20 +21,16 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const menuItems = [
-    { name: 'Services', href: '#destinations' },
-    { name: 'About Us', href: '#showcase' },
-    { name: 'Training and Placement', href: '#scholarships' },
-    { name: 'Coaching', href: '#testimonials' },
-    { name: 'Study in India', href: '#events' },
+    { name: 'Services', href: '#destinations', external: false },
+    { name: 'About Us', href: '/about', external: true },
+    { name: 'Training and Placement', href: '#scholarships', external: false },
+    { name: 'Coaching', href: '#testimonials', external: false },
+    { name: 'Study in India', href: '#events', external: false },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-40 px-8 md:px-16 py-6 transition-all duration-400 ease-[cubic-bezier(0.25,1,0.5,1)] ${
-        isScrolled
-          ? 'bg-brand-bg/95 backdrop-blur-sm border-b border-brand-text/5 -translate-y-[5px]'
-          : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-40 px-8 md:px-16 py-6 bg-brand-bg/95 backdrop-blur-sm border-b border-brand-text/5 transition-all duration-400 ease-[cubic-bezier(0.25,1,0.5,1)]"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo Left */}
@@ -53,18 +50,31 @@ export const Navbar: React.FC = () => {
         {/* Menu Center/Right */}
         <div className="hidden md:flex items-center gap-10">
           <div className="flex items-center gap-8 text-xs font-semibold tracking-widest uppercase">
-            {menuItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="relative text-brand-text hover:text-brand-hover transition-colors py-2 group cursor-none"
-                onMouseEnter={() => setCursorType('view')}
-                onMouseLeave={() => setCursorType('default')}
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-brand-text transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
+            {menuItems.map((item) =>
+              item.external ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className="relative text-brand-text hover:text-brand-hover transition-colors py-2 group cursor-none"
+                  onMouseEnter={() => setCursorType('view')}
+                  onMouseLeave={() => setCursorType('default')}
+                >
+                  {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-brand-text transition-all duration-300 group-hover:w-full" />
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="relative text-brand-text hover:text-brand-hover transition-colors py-2 group cursor-none"
+                  onMouseEnter={() => setCursorType('view')}
+                  onMouseLeave={() => setCursorType('default')}
+                >
+                  {item.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-brand-text transition-all duration-300 group-hover:w-full" />
+                </a>
+              )
+            )}
           </div>
 
           <div className="flex items-center gap-4">
