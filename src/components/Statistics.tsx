@@ -32,7 +32,7 @@ const StatItem: React.FC<StatProps> = ({ prefix = '', target, suffix, label, des
 
   return (
     <div ref={ref} className="flex flex-col border-t border-brand-text/10 pt-10">
-      <span className="font-heading font-medium text-6xl md:text-8xl tracking-tight leading-none text-brand-text mb-3">
+      <span className="font-heading font-medium text-5xl sm:text-6xl md:text-8xl tracking-tight leading-none text-brand-text mb-3">
         {prefix}{count}{suffix}
       </span>
       <span className="text-sm font-semibold tracking-widest uppercase text-brand-text mb-2">{label}</span>
@@ -72,7 +72,7 @@ export const Statistics: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8, ease }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
         >
           {stats.map((stat, i) => (
             <StatItem key={i} {...stat} />

@@ -112,7 +112,7 @@ export const UniversityShowcase: React.FC = () => {
         </motion.div>
 
         {/* Asymmetric 4-column masonry */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 items-start mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 items-start mb-24">
           <div className="flex flex-col gap-6">
             <GridItem {...universities[0]} index={0} />
             <GridItem {...universities[4]} index={4} />

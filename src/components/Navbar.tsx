@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCursor } from '../context/CursorContext';
-import { Search } from 'lucide-react';
+import { Search, X, Menu } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const { setCursorType } = useCursor();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const closeMenu = () => setIsMobileMenuOpen(false);
 
   const menuItems = [
     { name: 'Services', href: '#destinations', external: false },
@@ -101,13 +104,56 @@ export const Navbar: React.FC = () => {
         {/* Mobile Menu Icon */}
         <button
           className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => {}}
-          aria-label="Toggle Menu"
+          onClick={() => setIsMobileMenuOpen(true)}
+          aria-label="Open Menu"
         >
           <span className="w-6 h-[2px] bg-brand-text" />
           <span className="w-6 h-[2px] bg-brand-text" />
         </button>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-brand-bg flex flex-col items-center justify-center p-8 md:hidden">
+          <button
+            className="absolute top-6 right-8 p-2"
+            onClick={closeMenu}
+            aria-label="Close Menu"
+          >
+            <X className="w-8 h-8 text-brand-text" />
+          </button>
+          <div className="flex flex-col items-center gap-8 text-lg font-semibold tracking-widest uppercase">
+            {menuItems.map((item) =>
+              item.external ? (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={closeMenu}
+                  className="text-brand-text hover:text-brand-hover transition-colors"
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={closeMenu}
+                  className="text-brand-text hover:text-brand-hover transition-colors"
+                >
+                  {item.name}
+                </a>
+              )
+            )}
+            <a
+              href="#consultation"
+              onClick={closeMenu}
+              className="mt-4 px-6 py-3 rounded-full bg-brand-accent text-brand-bg hover:bg-brand-hover transition-all text-sm font-semibold tracking-widest uppercase"
+            >
+              Book Consultation
+            </a>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

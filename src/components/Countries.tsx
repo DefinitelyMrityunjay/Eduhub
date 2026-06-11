@@ -176,8 +176,8 @@ export const Countries: React.FC = () => {
           </h2>
         </div>
 
-        {/* 4-column grid, 2 rows */}
-        <div className="grid grid-cols-2 md:grid-cols-4 w-full border-t border-brand-text/10">
+        {/* Grid layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full border-t border-brand-text/10">
           {countries.map((country, i) => (
             <CountryCard key={country.name} {...country} index={i} />
           ))}
