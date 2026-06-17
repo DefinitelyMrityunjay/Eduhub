@@ -5,7 +5,7 @@ import { useCursor } from '../context/CursorContext';
 export const CustomCursor: React.FC = () => {
   const { cursorType } = useCursor();
   const [isVisible, setIsVisible] = useState(false);
-  const [isFinePointer, setIsFinePointer] = useState(false);
+  const [isFinePointer, setIsFinePointer] = useState(() => window.matchMedia('(pointer: fine)').matches);
 
   // Position of the mouse
   const mouseX = useMotionValue(0);
@@ -19,7 +19,6 @@ export const CustomCursor: React.FC = () => {
   useEffect(() => {
     // Check if the device has a mouse/fine pointer
     const mediaQuery = window.matchMedia('(pointer: fine)');
-    setIsFinePointer(mediaQuery.matches);
 
     const handleMediaQueryChange = (e: MediaQueryListEvent) => {
       setIsFinePointer(e.matches);

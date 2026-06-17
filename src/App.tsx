@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { CursorProvider } from './context/CursorContext';
+import { ModalProvider } from './context/ModalContext';
 import { CustomCursor } from './components/CustomCursor';
+import { ConsultationModal } from './components/ConsultationModal';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Countries } from './components/Countries';
@@ -36,9 +38,11 @@ function App() {
 
   return (
     <CursorProvider>
-      <div className="relative min-h-screen bg-brand-bg text-brand-text overflow-hidden">
-        <CustomCursor />
-        <Navbar />
+      <ModalProvider>
+        <div className="relative min-h-screen bg-brand-bg text-brand-text overflow-hidden">
+          <CustomCursor />
+          <ConsultationModal />
+          <Navbar />
 
         <main>
           {/* 1. Hero — Stacked typography + floating campus image reveals */}
@@ -72,7 +76,8 @@ function App() {
 
         <Footer />
       </div>
-    </CursorProvider>
+    </ModalProvider>
+  </CursorProvider>
   );
 }
 

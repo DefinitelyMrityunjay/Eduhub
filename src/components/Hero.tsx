@@ -1,12 +1,14 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useCursor } from '../context/CursorContext';
+import { useModal } from '../context/ModalContext';
 
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 const curtainEase = [0.76, 0, 0.24, 1] as [number, number, number, number];
 
 export const Hero: React.FC = () => {
   const { setCursorType } = useCursor();
+  const { openModal } = useModal();
   const sectionRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -94,15 +96,15 @@ export const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.65, ease }}
         >
-          <a
-            href="#book"
+          <button
+            onClick={(e) => { e.preventDefault(); openModal(); }}
             className="flex items-center gap-3 px-8 py-4 bg-white text-brand-text text-xs font-semibold tracking-widest uppercase group transition-all duration-300 hover:bg-brand-bg cursor-none"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >
             Book Your Free Consultation
             <span className="transform transition-transform duration-300 group-hover:translate-x-1.5">→</span>
-          </a>
+          </button>
           <a
             href="tel:+911234567890"
             className="flex items-center gap-3 px-8 py-4 border border-white/30 text-white text-xs font-semibold tracking-widest uppercase hover:border-white transition-all duration-300 cursor-none"
