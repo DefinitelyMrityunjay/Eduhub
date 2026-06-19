@@ -15,19 +15,19 @@ interface University {
 }
 
 const universities: University[] = [
-  { name: 'Harvard University', country: 'USA', rank: '#1 World', image: 'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop', speed: 1.2, className: 'h-[65vh]' },
-  { name: 'University of Oxford', country: 'UK', rank: '#2 World', image: 'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=800&auto=format&fit=crop', speed: 0.8, className: 'h-[48vh] mt-16' },
-  { name: 'MIT', country: 'USA', rank: '#3 World', image: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=800&auto=format&fit=crop', speed: 1.5, className: 'h-[55vh] -mt-8' },
-  { name: 'University of Cambridge', country: 'UK', rank: '#4 World', image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800&auto=format&fit=crop', speed: 1.0, className: 'h-[60vh] mt-10' },
-  { name: 'Stanford University', country: 'USA', rank: '#5 World', image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop', speed: 1.3, className: 'h-[50vh]' },
-  { name: 'ETH Zurich', country: 'Switzerland', rank: '#7 World', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=800&auto=format&fit=crop', speed: 0.9, className: 'h-[62vh] mt-20' },
-  { name: 'Univ. of Toronto', country: 'Canada', rank: '#21 World', image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?q=80&w=800&auto=format&fit=crop', speed: 1.1, className: 'h-[55vh] -mt-4' },
-  { name: 'Univ. of Melbourne', country: 'Australia', rank: '#33 World', image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=800&auto=format&fit=crop', speed: 1.4, className: 'h-[48vh] mt-12' },
+  { name: 'McGill University', country: 'Canada', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?q=80&w=800&auto=format&fit=crop', speed: 1.2, className: 'h-[65vh]' },
+  { name: 'University of Oxford', country: 'UK', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=800&auto=format&fit=crop', speed: 0.8, className: 'h-[48vh] mt-16' },
+  { name: 'TU Munich', country: 'Germany', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=800&auto=format&fit=crop', speed: 1.5, className: 'h-[55vh] -mt-8' },
+  { name: 'Trinity College Dublin', country: 'Ireland', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1549918864-48ac978761a4?q=80&w=800&auto=format&fit=crop', speed: 1.0, className: 'h-[60vh] mt-10' },
+  { name: 'Univ. of Melbourne', country: 'Australia', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=800&auto=format&fit=crop', speed: 1.3, className: 'h-[50vh]' },
+  { name: 'ETH Zurich', country: 'Switzerland', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=800&auto=format&fit=crop', speed: 0.9, className: 'h-[62vh] mt-20' },
+  { name: 'Politecnico di Milano', country: 'Italy', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=800&auto=format&fit=crop', speed: 1.1, className: 'h-[55vh] -mt-4' },
+  { name: 'Sorbonne University', country: 'France', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1431274172761-fca41d930114?q=80&w=800&auto=format&fit=crop', speed: 1.4, className: 'h-[48vh] mt-12' },
 ];
 
 const marqueeNames = [
-  'Harvard', 'MIT', 'Stanford', 'Oxford', 'Cambridge', 'ETH Zurich', 'Toronto', 'Melbourne',
-  'Imperial College', 'LSE', 'NUS', 'Caltech', 'Yale', 'Princeton', 'Cornell',
+  'McGill', 'Oxford', 'TU Munich', 'Trinity Dublin', 'Melbourne', 'ETH Zurich', 'Politecnico Milano', 'Sorbonne',
+  'York University', 'University of Toronto', 'Heidelberg', 'HEC Paris', 'UC Dublin', 'Univ. of Warsaw', 'Riga Technical',
 ];
 
 interface GridItemProps extends University {
@@ -107,7 +107,7 @@ export const UniversityShowcase: React.FC = () => {
             </h2>
           </div>
           <p className="text-sm md:text-base text-brand-muted max-w-sm font-sans leading-relaxed">
-            1,500+ university partners across 20 countries. We connect you with institutions that shape global leaders.
+            1,500+ university partners across 15 countries. We connect you with institutions that shape global leaders.
           </p>
         </motion.div>
 

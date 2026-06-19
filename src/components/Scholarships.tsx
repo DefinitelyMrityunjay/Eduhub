@@ -38,11 +38,11 @@ const CountUp: React.FC<StatProps> = ({ prefix = '', target, suffix, label }) =>
 
 const scholarshipPrograms = [
   { name: 'Chevening Scholarship', country: 'UK', amount: 'Full Funding', deadline: 'Nov 2026' },
-  { name: 'Gates Cambridge', country: 'UK', amount: 'Full Funding', deadline: 'Oct 2026' },
+  { name: 'Eiffel Excellence Scholarship', country: 'France', amount: 'Full Funding', deadline: 'Jan 2027' },
   { name: 'Fulbright Program', country: 'USA', amount: 'Up to $50,000', deadline: 'Sep 2026' },
   { name: 'Australia Awards', country: 'Australia', amount: 'Full Funding', deadline: 'Jul 2026' },
   { name: 'DAAD Scholarship', country: 'Germany', amount: '€750–€1,200/mo', deadline: 'Oct 2026' },
-  { name: 'Vanier Canada', country: 'Canada', amount: 'CAD $50,000', deadline: 'Nov 2026' },
+  { name: 'Stipendium Hungaricum', country: 'Hungary', amount: 'Full Funding', deadline: 'Jan 2027' },
 ];
 
 export const Scholarships: React.FC = () => {

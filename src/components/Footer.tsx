@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
   const cols = [
     {
       heading: 'Destinations',
-      links: ['USA', 'Canada', 'United Kingdom', 'Australia', 'Germany', 'Ireland', 'New Zealand', 'Singapore'],
+      links: ['Canada', 'USA', 'United Kingdom', 'Australia', 'Germany', 'France', 'New Zealand', 'Ireland', 'Italy', 'Poland', 'Denmark', 'Switzerland', 'Hungary', 'Malta', 'Latvia'],
     },
     {
       heading: 'Services',

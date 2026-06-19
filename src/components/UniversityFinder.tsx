@@ -5,10 +5,10 @@ import { useCursor } from '../context/CursorContext';
 const ease = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const filterOptions = {
-  country: ['Any Country', 'USA', 'Canada', 'UK', 'Australia', 'Germany', 'Ireland', 'New Zealand', 'Singapore'],
+  country: ['Any Country', 'Canada', 'USA', 'UK', 'Australia', 'Germany', 'France', 'New Zealand', 'Ireland', 'Italy', 'Poland', 'Denmark', 'Switzerland', 'Hungary', 'Malta', 'Latvia'],
   course: ['Any Course', 'Computer Science', 'Business', 'Engineering', 'Medicine', 'Law', 'Arts & Design'],
   budget: ['Any Budget', 'Under $15K', '$15K–$30K', '$30K–$50K', '$50K+'],
-  intake: ['Any Intake', 'Jan 2025', 'May 2025', 'Sep 2025', 'Jan 2026'],
+  intake: ['Any Intake', 'Sep 2026', 'Jan 2027', 'May 2027', 'Sep 2027'],
   degree: ['Any Level', 'Bachelor\'s', 'Master\'s', 'PhD', 'Diploma'],
 };
 
@@ -22,12 +22,12 @@ interface UniversityResult {
 }
 
 const allResults: UniversityResult[] = [
-  { name: 'Harvard University', country: 'USA', course: 'Computer Science', tuition: '$54,000/yr', intake: 'Sep 2025', image: 'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=400&auto=format&fit=crop' },
-  { name: 'University of Toronto', country: 'Canada', course: 'Business', tuition: 'CAD $42,000/yr', intake: 'Sep 2025', image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?q=80&w=400&auto=format&fit=crop' },
-  { name: 'University of Oxford', country: 'UK', course: 'Law', tuition: '£28,000/yr', intake: 'Oct 2025', image: 'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=400&auto=format&fit=crop' },
-  { name: 'University of Melbourne', country: 'Australia', course: 'Engineering', tuition: 'AUD $36,000/yr', intake: 'Feb 2026', image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=400&auto=format&fit=crop' },
-  { name: 'TU Munich', country: 'Germany', course: 'Engineering', tuition: '€0/yr', intake: 'Oct 2025', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=400&auto=format&fit=crop' },
-  { name: 'NUS Singapore', country: 'Singapore', course: 'Computer Science', tuition: 'SGD $29,000/yr', intake: 'Aug 2025', image: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?q=80&w=400&auto=format&fit=crop' },
+  { name: 'McGill University', country: 'Canada', course: 'Business', tuition: 'CAD $28,000/yr', intake: 'Sep 2026', image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?q=80&w=400&auto=format&fit=crop' },
+  { name: 'University of Oxford', country: 'UK', course: 'Law', tuition: '£28,000/yr', intake: 'Oct 2026', image: 'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=400&auto=format&fit=crop' },
+  { name: 'University of Melbourne', country: 'Australia', course: 'Engineering', tuition: 'AUD $36,000/yr', intake: 'Feb 2027', image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=400&auto=format&fit=crop' },
+  { name: 'TU Munich', country: 'Germany', course: 'Engineering', tuition: '€0/yr', intake: 'Oct 2026', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=400&auto=format&fit=crop' },
+  { name: 'Trinity College Dublin', country: 'Ireland', course: 'Computer Science', tuition: '€18,000/yr', intake: 'Sep 2026', image: 'https://images.unsplash.com/photo-1549918864-48ac978761a4?q=80&w=400&auto=format&fit=crop' },
+  { name: 'Sorbonne University', country: 'France', course: 'Business', tuition: '€3,500/yr', intake: 'Sep 2026', image: 'https://images.unsplash.com/photo-1431274172761-fca41d930114?q=80&w=400&auto=format&fit=crop' },
 ];
 
 type FilterKey = keyof typeof filterOptions;

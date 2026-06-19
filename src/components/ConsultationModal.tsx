@@ -53,13 +53,21 @@ export const ConsultationModal: React.FC = () => {
   };
 
   const destinations = [
+    { value: 'canada', label: 'Canada' },
     { value: 'usa', label: 'United States (USA)' },
     { value: 'uk', label: 'United Kingdom (UK)' },
-    { value: 'canada', label: 'Canada' },
     { value: 'australia', label: 'Australia' },
     { value: 'germany', label: 'Germany' },
+    { value: 'france', label: 'France' },
+    { value: 'new-zealand', label: 'New Zealand' },
     { value: 'ireland', label: 'Ireland' },
-    { value: 'singapore', label: 'Singapore' },
+    { value: 'italy', label: 'Italy' },
+    { value: 'poland', label: 'Poland' },
+    { value: 'denmark', label: 'Denmark' },
+    { value: 'switzerland', label: 'Switzerland' },
+    { value: 'hungary', label: 'Hungary' },
+    { value: 'malta', label: 'Malta' },
+    { value: 'latvia', label: 'Latvia' },
     { value: 'other', label: 'Other' },
   ];
 

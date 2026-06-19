@@ -70,12 +70,21 @@ export const Navbar: React.FC = () => {
       href: '#study-abroad',
       external: false,
       subItems: [
-        { label: 'Study in USA', href: '#study-abroad' },
-        { label: 'Study in UK', href: '#study-abroad' },
-        { label: 'Study in Canada', href: '#study-abroad' },
-        { label: 'Study in Australia', href: '#study-abroad' },
-        { label: 'Study in Germany', href: '#study-abroad' },
-        { label: 'Study in New Zealand', href: '#study-abroad' },
+        { label: 'Study in Canada', href: '/study/canada' },
+        { label: 'Study in USA', href: '/study/usa' },
+        { label: 'Study in UK', href: '/study/uk' },
+        { label: 'Study in Australia', href: '/study/australia' },
+        { label: 'Study in Germany', href: '/study/germany' },
+        { label: 'Study in France', href: '/study/france' },
+        { label: 'Study in New Zealand', href: '/study/new-zealand' },
+        { label: 'Study in Ireland', href: '/study/ireland' },
+        { label: 'Study in Italy', href: '/study/italy' },
+        { label: 'Study in Poland', href: '/study/poland' },
+        { label: 'Study in Denmark', href: '/study/denmark' },
+        { label: 'Study in Switzerland', href: '/study/switzerland' },
+        { label: 'Study in Hungary', href: '/study/hungary' },
+        { label: 'Study in Malta', href: '/study/malta' },
+        { label: 'Study in Latvia', href: '/study/latvia' },
       ],
     },
     {
@@ -206,15 +215,25 @@ export const Navbar: React.FC = () => {
 
                         {useGrid ? (
                           <div className="grid grid-cols-3 gap-x-6 gap-y-3 relative z-10">
-                            {item.subItems.map((sub) => (
-                              <a
-                                key={sub.label}
-                                href={sub.href}
-                                className="text-[11px] uppercase font-semibold tracking-wider text-brand-text/80 hover:text-brand-hover hover:translate-x-1 transition-all duration-200 py-1"
-                              >
-                                {sub.label}
-                              </a>
-                            ))}
+                            {item.subItems.map((sub) =>
+                              sub.href.startsWith('/') ? (
+                                <Link
+                                  key={sub.label}
+                                  to={sub.href}
+                                  className="text-[11px] uppercase font-semibold tracking-wider text-brand-text/80 hover:text-brand-hover hover:translate-x-1 transition-all duration-200 py-1"
+                                >
+                                  {sub.label}
+                                </Link>
+                              ) : (
+                                <a
+                                  key={sub.label}
+                                  href={sub.href}
+                                  className="text-[11px] uppercase font-semibold tracking-wider text-brand-text/80 hover:text-brand-hover hover:translate-x-1 transition-all duration-200 py-1"
+                                >
+                                  {sub.label}
+                                </a>
+                              )
+                            )}
                           </div>
                         ) : (
                           <div className="flex flex-col gap-1 relative z-10">
@@ -318,16 +337,27 @@ export const Navbar: React.FC = () => {
                 {/* Mobile sub-items */}
                 {mobileExpanded === item.name && item.subItems.length > 0 && (
                   <div className="flex flex-col items-center gap-1 pb-3">
-                    {item.subItems.map((sub) => (
-                      <a
-                        key={sub.label}
-                        href={sub.href}
-                        onClick={closeMenu}
-                        className="text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-1"
-                      >
-                        {sub.label}
-                      </a>
-                    ))}
+                    {item.subItems.map((sub) =>
+                      sub.href.startsWith('/') ? (
+                        <Link
+                          key={sub.label}
+                          to={sub.href}
+                          onClick={closeMenu}
+                          className="text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-1"
+                        >
+                          {sub.label}
+                        </Link>
+                      ) : (
+                        <a
+                          key={sub.label}
+                          href={sub.href}
+                          onClick={closeMenu}
+                          className="text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-1"
+                        >
+                          {sub.label}
+                        </a>
+                      )
+                    )}
                   </div>
                 )}
               </div>

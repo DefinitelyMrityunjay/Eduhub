@@ -24,7 +24,7 @@ const steps: Step[] = [
   {
     number: '02',
     title: 'Choose Destination',
-    description: 'USA, UK, Canada, Australia, Germany — each destination offers a distinct lifestyle and academic experience. Our experts guide you to the perfect match.',
+    description: 'Canada, USA, UK, Australia, Germany, France, Ireland and more — each destination offers a distinct lifestyle and academic experience. Our experts guide you to the perfect match.',
     image: 'https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=800&auto=format&fit=crop',
     alt: 'World map with travel planning',
   },
