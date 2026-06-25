@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
     },
     {
       heading: 'Services',
-      links: ['University Counselling', 'SOP Writing', 'Scholarship Guidance', 'Visa Processing', 'Pre-Departure Support'],
+      links: ['Career Counselling', 'University Selection', 'Visa Documentation', 'Student Visa', 'SOP & Resume', 'Spouse Visa', 'Visitor Visa', 'PR & Immigration', 'Onshore Services'],
     },
     {
       heading: 'Company',

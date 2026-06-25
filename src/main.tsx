@@ -5,6 +5,10 @@ import './index.css'
 import App from './App.tsx'
 import AboutUs from './pages/AboutUs.tsx'
 import CountryPage from './pages/CountryPage.tsx'
+import ServicesPage from './pages/ServicesPage.tsx'
+import ServiceDetailPage from './pages/ServiceDetailPage.tsx'
+import MedicalPage from './pages/MedicalPage.tsx'
+import MedicalDetailPage from './pages/MedicalDetailPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -13,6 +17,10 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<App />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/study/:slug" element={<CountryPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/:slug" element={<ServiceDetailPage />} />
+        <Route path="/medical" element={<MedicalPage />} />
+        <Route path="/medical/:slug" element={<MedicalDetailPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

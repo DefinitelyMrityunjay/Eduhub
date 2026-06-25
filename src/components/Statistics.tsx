@@ -42,8 +42,8 @@ const StatItem: React.FC<StatProps> = ({ prefix = '', target, suffix, label, des
 };
 
 const stats: StatProps[] = [
-  { target: 50000, suffix: '+', label: 'Students Assisted', description: 'Across 20+ countries, every year' },
-  { target: 1500, suffix: '+', label: 'University Partners', description: 'Top ranked institutions worldwide' },
+  { target: 1000, suffix: '+', label: 'Students Assisted', description: 'Across 20+ countries, every year' },
+  { target: 100, suffix: '+', label: 'University Partners', description: 'Top ranked institutions worldwide' },
   { target: 20, suffix: '+', label: 'Countries', description: 'Global destinations we actively counsel' },
   { target: 95, suffix: '%', label: 'Visa Success Rate', description: 'Industry-leading approval record' },
 ];

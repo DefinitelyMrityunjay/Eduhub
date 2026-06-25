@@ -9,11 +9,17 @@ interface SubItem {
   href: string;
 }
 
+interface MenuSection {
+  heading: string;
+  items: SubItem[];
+}
+
 interface MenuItem {
   name: string;
   href: string;
   external: boolean;
   subItems: SubItem[];
+  sections?: MenuSection[];
 }
 
 export const Navbar: React.FC = () => {
@@ -51,18 +57,18 @@ export const Navbar: React.FC = () => {
     },
     {
       name: 'Services',
-      href: '#services',
-      external: false,
+      href: '/services',
+      external: true,
       subItems: [
-        { label: 'Career Counseling', href: '#services' },
-        { label: 'University Selection', href: '#services' },
-        { label: 'Visa Document', href: '#services' },
-        { label: 'Student Visa', href: '#services' },
-        { label: 'SOP | Resume Preparation', href: '#services' },
-        { label: 'Spouse Visa', href: '#services' },
-        { label: 'Visitor Visa', href: '#services' },
-        { label: 'PR | Immigration', href: '#services' },
-        { label: 'Pre-Departure Guidance', href: '#services' },
+        { label: 'Career Counselling', href: '/services/career-counselling' },
+        { label: 'University Selection', href: '/services/university-selection' },
+        { label: 'Visa Documentation', href: '/services/visa-documentation' },
+        { label: 'Student Visa', href: '/services/student-visa' },
+        { label: 'SOP & Resume', href: '/services/sop-resume' },
+        { label: 'Spouse Visa', href: '/services/spouse-visa' },
+        { label: 'Visitor Visa', href: '/services/visitor-visa' },
+        { label: 'PR & Immigration', href: '/services/pr-immigration' },
+        { label: 'Onshore Services', href: '/services/onshore-services' },
       ],
     },
     {
@@ -89,15 +95,31 @@ export const Navbar: React.FC = () => {
     },
     {
       name: 'Medical',
-      href: '#medical',
-      external: false,
-      subItems: [
-        { label: 'MBBS Abroad', href: '#medical' },
-        { label: 'MBBS in Russia', href: '#medical' },
-        { label: 'MBBS in Philippines', href: '#medical' },
-        { label: 'MBBS in Georgia', href: '#medical' },
-        { label: 'MBBS in Kazakhstan', href: '#medical' },
-        { label: 'MBBS in Bangladesh', href: '#medical' },
+      href: '/medical',
+      external: true,
+      subItems: [],
+      sections: [
+        {
+          heading: 'Abroad',
+          items: [
+            { label: 'MBBS in Uzbekistan', href: '/medical/mbbs-uzbekistan' },
+            { label: 'MBBS in Georgia', href: '/medical/mbbs-georgia' },
+            { label: 'MBBS in Russia', href: '/medical/mbbs-russia' },
+            { label: 'MBBS in USA', href: '/medical/mbbs-usa' },
+            { label: 'MBBS in Kazakhstan', href: '/medical/mbbs-kazakhstan' },
+            { label: 'MBBS in Germany', href: '/medical/mbbs-germany' },
+          ],
+        },
+        {
+          heading: 'India',
+          items: [
+            { label: 'MBBS', href: '/medical/mbbs-india' },
+            { label: 'BDS', href: '/medical/bds' },
+            { label: 'BHMS', href: '/medical/bhms' },
+            { label: 'BAMS', href: '/medical/bams' },
+            { label: 'NEET/UG Counselling', href: '/medical/neet-ug-counselling' },
+          ],
+        },
       ],
     },
     {
@@ -163,7 +185,8 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-1 xl:gap-2 text-[11px] xl:text-[13px] font-medium text-brand-text/90 tracking-wide whitespace-nowrap capitalize">
             {menuItems.map((item, index) => {
               const isRightEdge = index >= menuItems.length - 3;
-              const hasSubItems = item.subItems.length > 0;
+              const hasSections = !!item.sections?.length;
+              const hasSubItems = item.subItems.length > 0 || hasSections;
               // For items with many sub-items, use a 3-col grid; otherwise a simple list
               const useGrid = item.subItems.length > 4;
 
@@ -207,13 +230,44 @@ export const Navbar: React.FC = () => {
                     >
                       <div
                         className={`${
-                          useGrid ? 'w-[600px]' : 'w-[240px]'
+                          hasSections ? 'w-[400px]' : useGrid ? 'w-[600px]' : 'w-[240px]'
                         } bg-brand-bg/98 backdrop-blur-2xl border border-brand-text/10 rounded-xl shadow-[0_16px_48px_-12px_rgba(0,0,0,0.15)] p-5 relative overflow-hidden`}
                       >
                         {/* Decorative glow */}
                         <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-accent/5 rounded-full blur-2xl pointer-events-none" />
 
-                        {useGrid ? (
+                        {hasSections ? (
+                          <div className="grid grid-cols-2 gap-x-6 relative z-10">
+                            {item.sections!.map((section) => (
+                              <div key={section.heading}>
+                                <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-text/35 mb-2.5 pb-1.5 border-b border-brand-text/8">
+                                  {section.heading}
+                                </p>
+                                <div className="flex flex-col gap-0.5">
+                                  {section.items.map((sub) =>
+                                    sub.href.startsWith('/') ? (
+                                      <Link
+                                        key={sub.label}
+                                        to={sub.href}
+                                        className="text-[11px] uppercase font-semibold tracking-wider text-brand-text/80 hover:text-brand-hover hover:translate-x-1 transition-all duration-200 py-1.5 px-1"
+                                      >
+                                        {sub.label}
+                                      </Link>
+                                    ) : (
+                                      <a
+                                        key={sub.label}
+                                        href={sub.href}
+                                        className="text-[11px] uppercase font-semibold tracking-wider text-brand-text/80 hover:text-brand-hover hover:translate-x-1 transition-all duration-200 py-1.5 px-1"
+                                      >
+                                        {sub.label}
+                                      </a>
+                                    )
+                                  )}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        ) : useGrid ? (
                           <div className="grid grid-cols-3 gap-x-6 gap-y-3 relative z-10">
                             {item.subItems.map((sub) =>
                               sub.href.startsWith('/') ? (
@@ -318,7 +372,8 @@ export const Navbar: React.FC = () => {
                 <button
                   className="w-full flex items-center justify-center gap-2 py-3 text-brand-text hover:text-brand-hover transition-colors"
                   onClick={() => {
-                    if (item.subItems.length > 0) {
+                    const hasAny = item.subItems.length > 0 || !!item.sections?.length;
+                    if (hasAny) {
                       setMobileExpanded(mobileExpanded === item.name ? null : item.name);
                     } else {
                       closeMenu();
@@ -326,7 +381,7 @@ export const Navbar: React.FC = () => {
                   }}
                 >
                   {item.name}
-                  {item.subItems.length > 0 && (
+                  {(item.subItems.length > 0 || !!item.sections?.length) && (
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-300 ${
                         mobileExpanded === item.name ? 'rotate-180' : ''
@@ -335,7 +390,38 @@ export const Navbar: React.FC = () => {
                   )}
                 </button>
                 {/* Mobile sub-items */}
-                {mobileExpanded === item.name && item.subItems.length > 0 && (
+                {mobileExpanded === item.name && item.sections?.length ? (
+                  <div className="flex flex-col items-center gap-3 pb-3 w-full">
+                    {item.sections.map((section) => (
+                      <div key={section.heading} className="w-full text-center">
+                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-text/35 mb-1.5">
+                          {section.heading}
+                        </p>
+                        {section.items.map((sub) =>
+                          sub.href.startsWith('/') ? (
+                            <Link
+                              key={sub.label}
+                              to={sub.href}
+                              onClick={closeMenu}
+                              className="block text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-1"
+                            >
+                              {sub.label}
+                            </Link>
+                          ) : (
+                            <a
+                              key={sub.label}
+                              href={sub.href}
+                              onClick={closeMenu}
+                              className="block text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-1"
+                            >
+                              {sub.label}
+                            </a>
+                          )
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                ) : mobileExpanded === item.name && item.subItems.length > 0 ? (
                   <div className="flex flex-col items-center gap-1 pb-3">
                     {item.subItems.map((sub) =>
                       sub.href.startsWith('/') ? (
@@ -359,7 +445,7 @@ export const Navbar: React.FC = () => {
                       )
                     )}
                   </div>
-                )}
+                ) : null}
               </div>
             ))}
             <button
