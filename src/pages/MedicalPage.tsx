@@ -243,6 +243,49 @@ const StatsStrip: React.FC = () => {
   );
 };
 
+// ── Seat Matrix Banner ────────────────────────────────────────────────────────
+const SeatMatrixBanner: React.FC = () => {
+  const { setCursorType } = useCursor();
+  return (
+    <section className="py-16 px-8 md:px-16 bg-brand-text/[0.03] border-t border-brand-text/8">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <p className="text-[10px] tracking-[0.3em] uppercase font-semibold text-brand-muted mb-2">NEET UG Counselling</p>
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease }}
+            className="font-heading text-[clamp(22px,3vw,36px)] font-medium tracking-[-0.03em] uppercase text-brand-text"
+          >
+            MBBS Seat Matrix 2026-27
+          </motion.h3>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease }}
+            className="text-sm text-brand-muted font-sans mt-2"
+          >
+            Explore state-wise tentative MBBS seat allocation across 9 states — government and private colleges.
+          </motion.p>
+        </div>
+        <Link
+          to="/seat-matrix"
+          className="shrink-0 flex items-center gap-3 px-6 py-3.5 rounded-full border border-brand-text text-brand-text hover:bg-brand-text hover:text-brand-bg transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-none"
+          onMouseEnter={() => setCursorType('view')}
+          onMouseLeave={() => setCursorType('default')}
+        >
+          View Seat Matrix
+          <span className="w-5 h-5 rounded-full bg-brand-text text-brand-bg group-hover:bg-brand-bg group-hover:text-brand-text flex items-center justify-center transition-all duration-300 group-hover:translate-x-1">
+            <ArrowRight className="w-3 h-3" />
+          </span>
+        </Link>
+      </div>
+    </section>
+  );
+};
+
 // ── CTA Banner ────────────────────────────────────────────────────────────────
 const CTABanner: React.FC = () => {
   const { setCursorType } = useCursor();
@@ -317,6 +360,7 @@ const MedicalPage: React.FC = () => {
             <Hero />
             <StatsStrip />
             <Programs />
+            <SeatMatrixBanner />
             <CTABanner />
           </main>
           <Footer />

@@ -9,6 +9,7 @@ import ServicesPage from './pages/ServicesPage.tsx'
 import ServiceDetailPage from './pages/ServiceDetailPage.tsx'
 import MedicalPage from './pages/MedicalPage.tsx'
 import MedicalDetailPage from './pages/MedicalDetailPage.tsx'
+import SeatMatrixPage from './pages/SeatMatrixPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/services/:slug" element={<ServiceDetailPage />} />
         <Route path="/medical" element={<MedicalPage />} />
         <Route path="/medical/:slug" element={<MedicalDetailPage />} />
+        <Route path="/seat-matrix" element={<SeatMatrixPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

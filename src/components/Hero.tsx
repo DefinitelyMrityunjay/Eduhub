@@ -67,9 +67,9 @@ export const Hero: React.FC = () => {
 
         {/* Heading lines – staggered curtain rise */}
         {["Let's Plan", 'Your Global', 'Future.'].map((line, i) => (
-          <div key={line} className="overflow-hidden">
+          <div key={line} className={`overflow-hidden ${i < 2 ? 'mb-2' : 'mb-16'}`}>
             <motion.h1
-              className={`font-heading font-medium text-[clamp(48px,8vw,110px)] leading-[0.92] tracking-[-0.04em] uppercase text-white ${i < 2 ? 'mb-2' : 'mb-16'}`}
+              className="font-heading font-medium text-[clamp(48px,8vw,110px)] leading-[0.92] tracking-[-0.04em] uppercase text-white"
               initial={{ y: '110%' }}
               animate={{ y: '0%' }}
               transition={{ duration: 0.9, delay: 1.1 + i * 0.13, ease }}
