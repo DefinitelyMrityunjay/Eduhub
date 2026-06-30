@@ -98,7 +98,7 @@ export const Hero: React.FC = () => {
         >
           <button
             onClick={(e) => { e.preventDefault(); openModal(); }}
-            className="flex items-center gap-3 px-8 py-4 bg-white text-brand-text text-xs font-semibold tracking-widest uppercase group transition-all duration-300 hover:bg-brand-bg cursor-none"
+            className="flex items-center gap-3 px-8 py-4 bg-white text-brand-text text-xs font-semibold tracking-widest uppercase group transition-all duration-300 hover:bg-brand-bg cursor-pointer"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >
@@ -107,7 +107,7 @@ export const Hero: React.FC = () => {
           </button>
           <a
             href="tel:+911234567890"
-            className="flex items-center gap-3 px-8 py-4 border border-white/30 text-white text-xs font-semibold tracking-widest uppercase hover:border-white transition-all duration-300 cursor-none"
+            className="flex items-center gap-3 px-8 py-4 border border-white/30 text-white text-xs font-semibold tracking-widest uppercase hover:border-white transition-all duration-300 cursor-pointer"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >

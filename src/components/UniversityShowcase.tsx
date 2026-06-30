@@ -51,7 +51,7 @@ const GridItem: React.FC<GridItemProps> = ({ name, country, rank, image, speed, 
   return (
     <div
       ref={setRefs}
-      className={`relative overflow-hidden group rounded-xl cursor-none ${className}`}
+      className={`relative overflow-hidden group rounded-xl cursor-pointer ${className}`}
       onMouseEnter={() => setCursorType('view')}
       onMouseLeave={() => setCursorType('default')}
       style={{ animationDelay: `${index * 100}ms` }}

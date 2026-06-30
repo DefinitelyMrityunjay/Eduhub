@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { CursorProvider } from '../context/CursorContext';
 import { ModalProvider } from '../context/ModalContext';
-import { CustomCursor } from '../components/CustomCursor';
 import { ConsultationModal } from '../components/ConsultationModal';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
@@ -35,7 +34,7 @@ const ServiceCard: React.FC<{
     >
       <Link
         to={`/services/${slug}`}
-        className="group flex flex-col gap-6 p-8 md:p-10 border border-brand-text/10 rounded-2xl bg-brand-bg hover:border-brand-text/25 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.12)] transition-all duration-400 h-full cursor-none"
+        className="group flex flex-col gap-6 p-8 md:p-10 border border-brand-text/10 rounded-2xl bg-brand-bg hover:border-brand-text/25 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.12)] transition-all duration-400 h-full cursor-pointer"
         onMouseEnter={() => setCursorType('view')}
         onMouseLeave={() => setCursorType('default')}
       >
@@ -126,7 +125,7 @@ const PageContent: React.FC = () => {
           >
             <button
               onClick={() => openModal()}
-              className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-brand-accent text-brand-bg hover:bg-brand-hover transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-none"
+              className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-brand-accent text-brand-bg hover:bg-brand-hover transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-pointer"
               onMouseEnter={() => setCursorType('view')}
               onMouseLeave={() => setCursorType('default')}
             >
@@ -187,7 +186,7 @@ const PageContent: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15, ease }}
             onClick={() => openModal()}
-            className="shrink-0 flex items-center gap-3 px-7 py-4 rounded-full bg-brand-accent text-brand-bg hover:bg-brand-hover transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-none"
+            className="shrink-0 flex items-center gap-3 px-7 py-4 rounded-full bg-brand-accent text-brand-bg hover:bg-brand-hover transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-pointer"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >
@@ -220,7 +219,7 @@ const ServicesPage: React.FC = () => {
     <CursorProvider>
       <ModalProvider>
         <div className="relative min-h-screen bg-brand-bg text-brand-text overflow-hidden">
-          <CustomCursor />
+
           <ConsultationModal />
           <Navbar />
           <main>

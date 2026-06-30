@@ -22,13 +22,6 @@
     overflow-x: hidden;
   }
 
-  /* Custom cursor setup - hide native cursor on desktop */
-  @media (pointer: fine) {
-    body, a, button, select, [role="button"], input, textarea, .custom-hover-target {
-      cursor: none !important;
-    }
-  }
-
   /* Lenis scroll styles */
   html.lenis, html.lenis body {
     height: auto;

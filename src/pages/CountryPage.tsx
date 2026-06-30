@@ -4,7 +4,6 @@ import Lenis from 'lenis';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { CursorProvider } from '../context/CursorContext';
 import { ModalProvider } from '../context/ModalContext';
-import { CustomCursor } from '../components/CustomCursor';
 import { ConsultationModal } from '../components/ConsultationModal';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
@@ -93,14 +92,14 @@ const Hero: React.FC<{ country: CountryData }> = ({ country }) => {
         <motion.div className="flex flex-col sm:flex-row gap-4" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.65, ease }}>
           <button
             onClick={(e) => { e.preventDefault(); openModal(); }}
-            className="flex items-center gap-3 px-8 py-4 bg-white text-brand-text text-xs font-semibold tracking-widest uppercase group transition-all duration-300 hover:bg-brand-bg cursor-none w-fit"
+            className="flex items-center gap-3 px-8 py-4 bg-white text-brand-text text-xs font-semibold tracking-widest uppercase group transition-all duration-300 hover:bg-brand-bg cursor-pointer w-fit"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >
             Book Free Consultation
             <span className="transform transition-transform duration-300 group-hover:translate-x-1.5">→</span>
           </button>
-          <a href="tel:+911234567890" className="flex items-center gap-3 px-8 py-4 border border-white/30 text-white text-xs font-semibold tracking-widest uppercase hover:border-white transition-all duration-300 cursor-none w-fit"
+          <a href="tel:+911234567890" className="flex items-center gap-3 px-8 py-4 border border-white/30 text-white text-xs font-semibold tracking-widest uppercase hover:border-white transition-all duration-300 cursor-pointer w-fit"
             onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
             Call Us: +91 12345 67890
           </a>
@@ -319,7 +318,7 @@ const CTA: React.FC<{ country: CountryData }> = ({ country }) => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={(e) => { e.preventDefault(); openModal(); }}
-              className="flex items-center gap-3 px-8 py-4 bg-brand-text text-brand-bg text-xs font-semibold tracking-widest uppercase group transition-all duration-300 hover:bg-brand-hover cursor-none"
+              className="flex items-center gap-3 px-8 py-4 bg-brand-text text-brand-bg text-xs font-semibold tracking-widest uppercase group transition-all duration-300 hover:bg-brand-hover cursor-pointer"
               onMouseEnter={() => setCursorType('view')}
               onMouseLeave={() => setCursorType('default')}
             >
@@ -327,7 +326,7 @@ const CTA: React.FC<{ country: CountryData }> = ({ country }) => {
               <span className="transform transition-transform duration-300 group-hover:translate-x-1.5">→</span>
             </button>
             <a href="tel:+911234567890"
-              className="flex items-center gap-3 px-8 py-4 border border-brand-text/30 text-brand-text text-xs font-semibold tracking-widest uppercase hover:border-brand-text transition-all duration-300 cursor-none"
+              className="flex items-center gap-3 px-8 py-4 border border-brand-text/30 text-brand-text text-xs font-semibold tracking-widest uppercase hover:border-brand-text transition-all duration-300 cursor-pointer"
               onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
               Call Us: +91 12345 67890
             </a>
@@ -381,7 +380,7 @@ export default function CountryPage() {
     <CursorProvider>
       <ModalProvider>
         <div className="relative min-h-screen bg-brand-bg text-brand-text overflow-hidden">
-          <CustomCursor />
+
           <ConsultationModal />
           <Navbar />
           <CountryPageContent />

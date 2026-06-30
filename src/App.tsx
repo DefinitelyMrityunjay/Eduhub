@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { CursorProvider } from './context/CursorContext';
 import { ModalProvider } from './context/ModalContext';
-import { CustomCursor } from './components/CustomCursor';
 import { ConsultationModal } from './components/ConsultationModal';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -12,7 +11,6 @@ import { Services } from './components/Services';
 import { UniversityShowcase } from './components/UniversityShowcase';
 import { Scholarships } from './components/Scholarships';
 import { Statistics } from './components/Statistics';
-import { UniversityFinder } from './components/UniversityFinder';
 import { Testimonials } from './components/Testimonials';
 import { Events } from './components/Events';
 import { ConsultationCTA } from './components/ConsultationCTA';
@@ -41,7 +39,7 @@ function App() {
     <CursorProvider>
       <ModalProvider>
         <div className="relative min-h-screen bg-brand-bg text-brand-text overflow-hidden">
-          <CustomCursor />
+
           <ConsultationModal />
           <Navbar />
 
@@ -64,10 +62,7 @@ function App() {
           {/* 6. Scholarships — Programs and count-up metrics */}
           <Scholarships />
 
-          {/* 7. University Finder — Premium interactive filters */}
-          <UniversityFinder />
-
-          {/* 8. Student Testimonials — Horizontal drag scroll */}
+          {/* 7. Student Testimonials — Horizontal drag scroll */}
           <Testimonials />
 
           {/* 9. Events — Upcoming fairs/webinars/workshops */}

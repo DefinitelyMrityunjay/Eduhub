@@ -108,7 +108,7 @@ export const ConsultationModal: React.FC = () => {
               <button
                 type="button"
                 onClick={handleClose}
-                className="absolute top-6 right-6 p-2 rounded-full border border-white/5 hover:border-white/20 hover:bg-white/5 text-white/60 hover:text-white transition-all cursor-none"
+                className="absolute top-6 right-6 p-2 rounded-full border border-white/5 hover:border-white/20 hover:bg-white/5 text-white/60 hover:text-white transition-all cursor-pointer"
                 aria-label="Close modal"
                 onMouseEnter={() => setCursorType('view')}
                 onMouseLeave={() => setCursorType('default')}
@@ -152,7 +152,7 @@ export const ConsultationModal: React.FC = () => {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none cursor-none font-sans"
+                          className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none cursor-pointer font-sans"
                           placeholder="e.g. Jane Doe"
                           onMouseEnter={() => setCursorType('view')}
                           onMouseLeave={() => setCursorType('default')}
@@ -172,7 +172,7 @@ export const ConsultationModal: React.FC = () => {
                             required
                             value={formData.email}
                             onChange={handleChange}
-                            className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none cursor-none font-sans"
+                            className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none cursor-pointer font-sans"
                             placeholder="e.g. jane@example.com"
                             onMouseEnter={() => setCursorType('view')}
                             onMouseLeave={() => setCursorType('default')}
@@ -189,7 +189,7 @@ export const ConsultationModal: React.FC = () => {
                             required
                             value={formData.phone}
                             onChange={handleChange}
-                            className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none cursor-none font-sans"
+                            className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none cursor-pointer font-sans"
                             placeholder="e.g. +91 98765 43210"
                             onMouseEnter={() => setCursorType('view')}
                             onMouseLeave={() => setCursorType('default')}
@@ -209,7 +209,7 @@ export const ConsultationModal: React.FC = () => {
                             required
                             value={formData.country}
                             onChange={handleChange}
-                            className="w-full bg-[#121212] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all rounded-xl px-4 py-3 text-sm text-white focus:outline-none cursor-none font-sans"
+                            className="w-full bg-[#121212] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all rounded-xl px-4 py-3 text-sm text-white focus:outline-none cursor-pointer font-sans"
                             onMouseEnter={() => setCursorType('view')}
                             onMouseLeave={() => setCursorType('default')}
                           >
@@ -231,7 +231,7 @@ export const ConsultationModal: React.FC = () => {
                             required
                             value={formData.level}
                             onChange={handleChange}
-                            className="w-full bg-[#121212] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all rounded-xl px-4 py-3 text-sm text-white focus:outline-none cursor-none font-sans"
+                            className="w-full bg-[#121212] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all rounded-xl px-4 py-3 text-sm text-white focus:outline-none cursor-pointer font-sans"
                             onMouseEnter={() => setCursorType('view')}
                             onMouseLeave={() => setCursorType('default')}
                           >
@@ -256,7 +256,7 @@ export const ConsultationModal: React.FC = () => {
                           rows={3}
                           value={formData.message}
                           onChange={handleChange}
-                          className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none cursor-none font-sans resize-none"
+                          className="w-full bg-white/[0.03] border border-white/10 hover:border-white/20 focus:border-white/40 focus:ring-1 focus:ring-white/40 transition-all rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 focus:outline-none cursor-pointer font-sans resize-none"
                           placeholder="Tell us about your courses, universities of interest, or past test scores..."
                           onMouseEnter={() => setCursorType('view')}
                           onMouseLeave={() => setCursorType('default')}
@@ -268,7 +268,7 @@ export const ConsultationModal: React.FC = () => {
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full bg-white text-black font-semibold text-xs tracking-widest uppercase py-4 rounded-xl transition-all duration-300 hover:bg-brand-bg hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 cursor-none flex items-center justify-center gap-2"
+                          className="w-full bg-white text-black font-semibold text-xs tracking-widest uppercase py-4 rounded-xl transition-all duration-300 hover:bg-brand-bg hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
                           onMouseEnter={() => setCursorType('view')}
                           onMouseLeave={() => setCursorType('default')}
                         >
@@ -314,7 +314,7 @@ export const ConsultationModal: React.FC = () => {
                     <button
                       type="button"
                       onClick={handleClose}
-                      className="px-8 py-3.5 bg-white/10 hover:bg-white/25 text-white border border-white/10 hover:border-white/20 transition-all rounded-xl text-xs font-semibold tracking-widest uppercase cursor-none"
+                      className="px-8 py-3.5 bg-white/10 hover:bg-white/25 text-white border border-white/10 hover:border-white/20 transition-all rounded-xl text-xs font-semibold tracking-widest uppercase cursor-pointer"
                       onMouseEnter={() => setCursorType('view')}
                       onMouseLeave={() => setCursorType('default')}
                     >

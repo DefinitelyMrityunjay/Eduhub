@@ -27,7 +27,7 @@ const ServiceCard: React.FC<{
     >
       <Link
         to={`/services/${slug}`}
-        className="group flex flex-col gap-5 p-7 border border-brand-text/10 rounded-2xl bg-brand-bg hover:border-brand-text/30 hover:shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] transition-all duration-400 h-full cursor-none"
+        className="group flex flex-col gap-5 p-7 border border-brand-text/10 rounded-2xl bg-brand-bg hover:border-brand-text/30 hover:shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] transition-all duration-400 h-full cursor-pointer"
         onMouseEnter={() => setCursorType('view')}
         onMouseLeave={() => setCursorType('default')}
       >
@@ -138,7 +138,7 @@ export const Services: React.FC = () => {
           </p>
           <Link
             to="/services"
-            className="flex items-center gap-3 px-6 py-3 rounded-full border border-brand-text/20 text-brand-text hover:bg-brand-text hover:text-brand-bg transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-none"
+            className="flex items-center gap-3 px-6 py-3 rounded-full border border-brand-text/20 text-brand-text hover:bg-brand-text hover:text-brand-bg transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-pointer"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >

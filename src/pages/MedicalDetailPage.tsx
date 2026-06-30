@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { ArrowLeft, ArrowRight, CheckCircle2, ChevronDown } from 'lucide-react';
 import { CursorProvider } from '../context/CursorContext';
 import { ModalProvider } from '../context/ModalContext';
-import { CustomCursor } from '../components/CustomCursor';
 import { ConsultationModal } from '../components/ConsultationModal';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
@@ -51,7 +50,7 @@ const Hero: React.FC<{ program: MedicalProgram }> = ({ program }) => {
         >
           <Link
             to="/medical"
-            className="inline-flex items-center gap-2 text-white/40 hover:text-white/80 transition-colors text-[11px] tracking-widest uppercase font-semibold cursor-none"
+            className="inline-flex items-center gap-2 text-white/40 hover:text-white/80 transition-colors text-[11px] tracking-widest uppercase font-semibold cursor-pointer"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >
@@ -94,7 +93,7 @@ const Hero: React.FC<{ program: MedicalProgram }> = ({ program }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.45, ease }}
           onClick={() => openModal()}
-          className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-white text-brand-text hover:bg-white/90 transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-none"
+          className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-white text-brand-text hover:bg-white/90 transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-pointer"
           onMouseEnter={() => setCursorType('view')}
           onMouseLeave={() => setCursorType('default')}
         >
@@ -679,7 +678,7 @@ const FAQ: React.FC<{ program: MedicalProgram }> = ({ program }) => {
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-start justify-between gap-6 py-6 text-left cursor-none group"
+                className="w-full flex items-start justify-between gap-6 py-6 text-left cursor-pointer group"
               >
                 <span className="text-sm font-sans font-medium text-brand-text leading-snug group-hover:text-brand-muted transition-colors">
                   {faq.q}
@@ -743,7 +742,7 @@ const CTABanner: React.FC<{ program: MedicalProgram }> = ({ program }) => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15, ease }}
           onClick={() => openModal()}
-          className="shrink-0 flex items-center gap-3 px-7 py-4 rounded-full bg-brand-bg text-brand-text hover:bg-white/90 transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-none"
+          className="shrink-0 flex items-center gap-3 px-7 py-4 rounded-full bg-brand-bg text-brand-text hover:bg-white/90 transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-pointer"
           onMouseEnter={() => setCursorType('view')}
           onMouseLeave={() => setCursorType('default')}
         >
@@ -790,7 +789,7 @@ const RelatedPrograms: React.FC<{ currentSlug: string; category: 'abroad' | 'ind
             >
               <Link
                 to={`/medical/${prog.slug}`}
-                className="group flex flex-col gap-4 p-6 border border-brand-text/10 rounded-xl hover:border-brand-text/25 transition-all duration-300 cursor-none"
+                className="group flex flex-col gap-4 p-6 border border-brand-text/10 rounded-xl hover:border-brand-text/25 transition-all duration-300 cursor-pointer"
                 onMouseEnter={() => setCursorType('view')}
                 onMouseLeave={() => setCursorType('default')}
               >
@@ -841,7 +840,7 @@ const MedicalDetailPage: React.FC = () => {
     <CursorProvider>
       <ModalProvider>
         <div className="relative min-h-screen bg-brand-bg text-brand-text overflow-hidden">
-          <CustomCursor />
+
           <ConsultationModal />
           <Navbar />
           <main>

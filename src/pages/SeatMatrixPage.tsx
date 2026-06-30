@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, ChevronDown, ChevronUp } from 'lucide-react';
 import { CursorProvider } from '../context/CursorContext';
 import { ModalProvider } from '../context/ModalContext';
-import { CustomCursor } from '../components/CustomCursor';
 import { ConsultationModal } from '../components/ConsultationModal';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
@@ -171,7 +170,7 @@ const SeatMatrixTable: React.FC = () => {
               <button
                 key={t}
                 onClick={() => setTypeFilter(t)}
-                className={`px-5 py-3 rounded-xl text-xs font-semibold tracking-widest uppercase transition-all duration-200 cursor-none ${
+                className={`px-5 py-3 rounded-xl text-xs font-semibold tracking-widest uppercase transition-all duration-200 cursor-pointer ${
                   typeFilter === t
                     ? 'bg-brand-text text-brand-bg'
                     : 'border border-brand-text/15 text-brand-muted hover:border-brand-text/30 hover:text-brand-text'
@@ -189,7 +188,7 @@ const SeatMatrixTable: React.FC = () => {
         <div className="flex flex-wrap gap-2 mb-10">
           <button
             onClick={() => setActiveState(null)}
-            className={`px-4 py-2 rounded-full text-[11px] font-semibold tracking-widest uppercase transition-all duration-200 cursor-none ${
+            className={`px-4 py-2 rounded-full text-[11px] font-semibold tracking-widest uppercase transition-all duration-200 cursor-pointer ${
               activeState === null
                 ? 'bg-brand-text text-brand-bg'
                 : 'border border-brand-text/15 text-brand-muted hover:border-brand-text/30 hover:text-brand-text'
@@ -203,7 +202,7 @@ const SeatMatrixTable: React.FC = () => {
             <button
               key={s.state}
               onClick={() => setActiveState(s.state === activeState ? null : s.state)}
-              className={`px-4 py-2 rounded-full text-[11px] font-semibold tracking-widest uppercase transition-all duration-200 cursor-none ${
+              className={`px-4 py-2 rounded-full text-[11px] font-semibold tracking-widest uppercase transition-all duration-200 cursor-pointer ${
                 activeState === s.state
                   ? 'bg-brand-text text-brand-bg'
                   : 'border border-brand-text/15 text-brand-muted hover:border-brand-text/30 hover:text-brand-text'
@@ -242,7 +241,7 @@ const SeatMatrixTable: React.FC = () => {
               >
                 {/* State header */}
                 <button
-                  className="w-full flex items-center justify-between py-6 text-left group cursor-none"
+                  className="w-full flex items-center justify-between py-6 text-left group cursor-pointer"
                   onClick={() => toggleState(stateData.state)}
                   onMouseEnter={() => setCursorType('view')}
                   onMouseLeave={() => setCursorType('default')}
@@ -379,7 +378,7 @@ const SeatMatrixPage: React.FC = () => {
     <CursorProvider>
       <ModalProvider>
         <div className="relative min-h-screen bg-brand-bg text-brand-text overflow-hidden">
-          <CustomCursor />
+
           <ConsultationModal />
           <Navbar />
           <main>

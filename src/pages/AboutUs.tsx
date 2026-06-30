@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
 import { CursorProvider } from '../context/CursorContext';
-import { CustomCursor } from '../components/CustomCursor';
 import { Navbar } from '../components/Navbar';
 import { Storytelling } from '../components/Storytelling';
 import { Footer } from '../components/Footer';
@@ -28,7 +27,7 @@ function AboutUs() {
   return (
     <CursorProvider>
       <div className="relative min-h-screen bg-brand-bg text-brand-text overflow-hidden">
-        <CustomCursor />
+
         <Navbar />
         <main className="pt-24">
           <Storytelling />

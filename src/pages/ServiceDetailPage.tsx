@@ -5,7 +5,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { CursorProvider } from '../context/CursorContext';
 import { ModalProvider } from '../context/ModalContext';
-import { CustomCursor } from '../components/CustomCursor';
 import { ConsultationModal } from '../components/ConsultationModal';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
@@ -59,7 +58,7 @@ const Hero: React.FC<{ service: ServiceData }> = ({ service }) => {
         >
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 text-white/40 hover:text-white/80 transition-colors text-[11px] tracking-widest uppercase font-semibold cursor-none"
+            className="inline-flex items-center gap-2 text-white/40 hover:text-white/80 transition-colors text-[11px] tracking-widest uppercase font-semibold cursor-pointer"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >
@@ -106,7 +105,7 @@ const Hero: React.FC<{ service: ServiceData }> = ({ service }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.45, ease }}
           onClick={() => openModal()}
-          className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-white text-brand-text hover:bg-white/90 transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-none"
+          className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-white text-brand-text hover:bg-white/90 transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-pointer"
           onMouseEnter={() => setCursorType('view')}
           onMouseLeave={() => setCursorType('default')}
         >
@@ -313,7 +312,7 @@ const RelatedServices: React.FC<{ currentSlug: string }> = ({ currentSlug }) => 
             >
               <Link
                 to={`/services/${service.slug}`}
-                className="group flex flex-col gap-4 p-6 border border-brand-text/10 rounded-xl hover:border-brand-text/25 transition-all duration-300 cursor-none"
+                className="group flex flex-col gap-4 p-6 border border-brand-text/10 rounded-xl hover:border-brand-text/25 transition-all duration-300 cursor-pointer"
                 onMouseEnter={() => setCursorType('view')}
                 onMouseLeave={() => setCursorType('default')}
               >
@@ -369,7 +368,7 @@ const CTABanner: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15, ease }}
           onClick={() => openModal()}
-          className="shrink-0 flex items-center gap-3 px-7 py-4 rounded-full bg-brand-bg text-brand-text hover:bg-white/90 transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-none"
+          className="shrink-0 flex items-center gap-3 px-7 py-4 rounded-full bg-brand-bg text-brand-text hover:bg-white/90 transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-pointer"
           onMouseEnter={() => setCursorType('view')}
           onMouseLeave={() => setCursorType('default')}
         >
@@ -408,7 +407,7 @@ const ServiceDetailPage: React.FC = () => {
     <CursorProvider>
       <ModalProvider>
         <div className="relative min-h-screen bg-brand-bg text-brand-text overflow-hidden">
-          <CustomCursor />
+
           <ConsultationModal />
           <Navbar />
           <main>

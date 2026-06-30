@@ -169,7 +169,7 @@ const CountryCard: React.FC<CardProps> = ({ name, image, tuition, workRights, po
       initial={{ opacity: 0, x: fromLeft ? -60 : 60 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.9, delay: (index % 4) * 0.1, ease }}
-      className="relative overflow-hidden group cursor-none h-[60vh] min-h-[380px]"
+      className="relative overflow-hidden group cursor-pointer h-[60vh] min-h-[380px]"
       onMouseEnter={() => setCursorType('view')}
       onMouseLeave={() => setCursorType('default')}
     >

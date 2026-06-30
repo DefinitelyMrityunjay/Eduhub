@@ -86,7 +86,7 @@ export const UniversityFinder: React.FC = () => {
           {(Object.keys(filterOptions) as FilterKey[]).map((key) => (
             <div key={key} className="relative">
               <button
-                className={`px-5 py-2.5 text-[11px] font-semibold tracking-widest uppercase border transition-all duration-300 cursor-none flex items-center gap-2 ${
+                className={`px-5 py-2.5 text-[11px] font-semibold tracking-widest uppercase border transition-all duration-300 cursor-pointer flex items-center gap-2 ${
                   activeFilter === key
                     ? 'bg-brand-text text-brand-bg border-brand-text'
                     : filters[key] !== filterOptions[key][0]
@@ -115,7 +115,7 @@ export const UniversityFinder: React.FC = () => {
                       <button
                         key={opt}
                         onClick={() => handleFilter(key, opt)}
-                        className="w-full text-left px-5 py-3 text-[11px] font-semibold tracking-widest uppercase hover:bg-brand-text hover:text-brand-bg transition-colors duration-200 cursor-none"
+                        className="w-full text-left px-5 py-3 text-[11px] font-semibold tracking-widest uppercase hover:bg-brand-text hover:text-brand-bg transition-colors duration-200 cursor-pointer"
                         onMouseEnter={() => setCursorType('view')}
                         onMouseLeave={() => setCursorType('default')}
                       >
@@ -130,7 +130,7 @@ export const UniversityFinder: React.FC = () => {
 
           {/* Reset */}
           <button
-            className="px-5 py-2.5 text-[11px] font-semibold tracking-widest uppercase text-brand-muted hover:text-brand-text transition-colors duration-200 cursor-none"
+            className="px-5 py-2.5 text-[11px] font-semibold tracking-widest uppercase text-brand-muted hover:text-brand-text transition-colors duration-200 cursor-pointer"
             onClick={() => setFilters({ country: 'Any Country', course: 'Any Course', budget: 'Any Budget', intake: 'Any Intake', degree: 'Any Level' })}
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
@@ -150,7 +150,7 @@ export const UniversityFinder: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 30 }}
                 transition={{ duration: 0.5, delay: i * 0.06, ease }}
-                className="group border border-brand-text/10 hover:border-brand-text/30 transition-colors duration-300 cursor-none overflow-hidden"
+                className="group border border-brand-text/10 hover:border-brand-text/30 transition-colors duration-300 cursor-pointer overflow-hidden"
                 onMouseEnter={() => setCursorType('view')}
                 onMouseLeave={() => setCursorType('default')}
               >

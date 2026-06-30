@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { CursorProvider } from '../context/CursorContext';
 import { ModalProvider } from '../context/ModalContext';
-import { CustomCursor } from '../components/CustomCursor';
 import { ConsultationModal } from '../components/ConsultationModal';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
@@ -78,7 +77,7 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 1.35, ease }}
           onClick={() => openModal()}
-          className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-white text-brand-text hover:bg-white/90 transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-none"
+          className="flex items-center gap-3 px-6 py-3.5 rounded-full bg-white text-brand-text hover:bg-white/90 transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-pointer"
           onMouseEnter={() => setCursorType('view')}
           onMouseLeave={() => setCursorType('default')}
         >
@@ -105,7 +104,7 @@ const ProgramCard: React.FC<{ program: (typeof medicalData)[0]; index: number }>
     >
       <Link
         to={`/medical/${program.slug}`}
-        className="group flex flex-col h-full gap-5 p-7 border border-brand-text/10 rounded-2xl bg-brand-bg hover:border-brand-text/25 hover:shadow-sm transition-all duration-300 cursor-none"
+        className="group flex flex-col h-full gap-5 p-7 border border-brand-text/10 rounded-2xl bg-brand-bg hover:border-brand-text/25 hover:shadow-sm transition-all duration-300 cursor-pointer"
         onMouseEnter={() => setCursorType('view')}
         onMouseLeave={() => setCursorType('default')}
       >
@@ -272,7 +271,7 @@ const SeatMatrixBanner: React.FC = () => {
         </div>
         <Link
           to="/seat-matrix"
-          className="shrink-0 flex items-center gap-3 px-6 py-3.5 rounded-full border border-brand-text text-brand-text hover:bg-brand-text hover:text-brand-bg transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-none"
+          className="shrink-0 flex items-center gap-3 px-6 py-3.5 rounded-full border border-brand-text text-brand-text hover:bg-brand-text hover:text-brand-bg transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-pointer"
           onMouseEnter={() => setCursorType('view')}
           onMouseLeave={() => setCursorType('default')}
         >
@@ -320,7 +319,7 @@ const CTABanner: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15, ease }}
           onClick={() => openModal()}
-          className="shrink-0 flex items-center gap-3 px-7 py-4 rounded-full bg-brand-text text-brand-bg hover:bg-brand-hover transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-none"
+          className="shrink-0 flex items-center gap-3 px-7 py-4 rounded-full bg-brand-text text-brand-bg hover:bg-brand-hover transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-pointer"
           onMouseEnter={() => setCursorType('view')}
           onMouseLeave={() => setCursorType('default')}
         >
@@ -353,7 +352,7 @@ const MedicalPage: React.FC = () => {
     <CursorProvider>
       <ModalProvider>
         <div className="relative min-h-screen bg-brand-bg text-brand-text overflow-hidden">
-          <CustomCursor />
+
           <ConsultationModal />
           <Navbar />
           <main>

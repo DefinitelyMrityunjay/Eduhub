@@ -41,11 +41,11 @@ export const Footer: React.FC = () => {
               Your path to success in global education. Personalised counselling, admissions support, scholarships and visa guidance for students worldwide.
             </p>
             <div className="flex flex-col gap-1.5 mt-2">
-              <a href="mailto:hello@tcaeduhub.com" className="text-[11px] text-brand-text tracking-wide hover:text-brand-muted transition-colors cursor-none"
+              <a href="mailto:hello@tcaeduhub.com" className="text-[11px] text-brand-text tracking-wide hover:text-brand-muted transition-colors cursor-pointer"
                 onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
                 hello@tcaeduhub.com
               </a>
-              <a href="tel:+911234567890" className="text-[11px] text-brand-text tracking-wide hover:text-brand-muted transition-colors cursor-none"
+              <a href="tel:+911234567890" className="text-[11px] text-brand-text tracking-wide hover:text-brand-muted transition-colors cursor-pointer"
                 onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
                 +91 12345 67890
               </a>
@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
                 className="flex-1 bg-transparent px-5 py-3.5 text-[12px] font-sans text-brand-text placeholder:text-brand-muted/50 outline-none tracking-wide"
               />
               <button
-                className="px-5 py-3.5 bg-brand-accent text-brand-bg text-[10px] font-semibold tracking-widest uppercase hover:bg-brand-hover transition-colors duration-300 cursor-none"
+                className="px-5 py-3.5 bg-brand-accent text-brand-bg text-[10px] font-semibold tracking-widest uppercase hover:bg-brand-hover transition-colors duration-300 cursor-pointer"
                 onMouseEnter={() => setCursorType('view')}
                 onMouseLeave={() => setCursorType('default')}
               >
@@ -91,7 +91,7 @@ export const Footer: React.FC = () => {
                 <a
                   key={link}
                   href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="text-sm font-sans text-brand-text hover:text-brand-muted transition-colors cursor-none w-fit"
+                  className="text-sm font-sans text-brand-text hover:text-brand-muted transition-colors cursor-pointer w-fit"
                   onMouseEnter={() => setCursorType('view')}
                   onMouseLeave={() => setCursorType('default')}
                 >
@@ -105,7 +105,7 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col gap-4">
             <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Follow Us</span>
             {['Instagram', 'LinkedIn', 'YouTube', 'Facebook', 'X / Twitter'].map((s) => (
-              <a key={s} href="#" className="text-sm font-sans text-brand-text hover:text-brand-muted transition-colors cursor-none w-fit"
+              <a key={s} href="#" className="text-sm font-sans text-brand-text hover:text-brand-muted transition-colors cursor-pointer w-fit"
                 onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
                 {s}
               </a>
@@ -129,8 +129,8 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-between text-[10px] tracking-wider uppercase font-semibold text-brand-muted gap-3">
             <span>© {currentYear} TCA Edu Hub. All rights reserved.</span>
             <div className="flex items-center gap-6">
-              <a href="#privacy" className="hover:text-brand-text cursor-none" onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>Privacy Policy</a>
-              <a href="#terms" className="hover:text-brand-text cursor-none" onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>Terms of Use</a>
+              <a href="#privacy" className="hover:text-brand-text cursor-pointer" onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>Privacy Policy</a>
+              <a href="#terms" className="hover:text-brand-text cursor-pointer" onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>Terms of Use</a>
               <span>Designed with Intention</span>
             </div>
           </div>

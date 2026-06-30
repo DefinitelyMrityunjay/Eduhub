@@ -148,15 +148,15 @@ export const Navbar: React.FC = () => {
     },
     {
       name: 'School of Language',
-      href: '#school-of-language',
-      external: false,
+      href: '/languages',
+      external: true,
       subItems: [
-        { label: 'IELTS Coaching', href: '#school-of-language' },
-        { label: 'TOEFL Preparation', href: '#school-of-language' },
-        { label: 'PTE Coaching', href: '#school-of-language' },
-        { label: 'German Language', href: '#school-of-language' },
-        { label: 'French Language', href: '#school-of-language' },
-        { label: 'Japanese Language', href: '#school-of-language' },
+        { label: 'IELTS / PTE / TOEFL', href: '/languages#test-prep' },
+        { label: 'German Language', href: '/languages#languages' },
+        { label: 'French Language', href: '/languages#languages' },
+        { label: 'Japanese Language', href: '/languages#languages' },
+        { label: 'English Programs', href: '/languages#languages' },
+        { label: 'Punjabi Heritage', href: '/languages#languages' },
       ],
     },
   ];
@@ -196,7 +196,7 @@ export const Navbar: React.FC = () => {
                   {item.external ? (
                     <Link
                       to={item.href}
-                      className="relative flex items-center gap-1 text-brand-text hover:text-brand-hover transition-colors py-5 px-2 cursor-none"
+                      className="relative flex items-center gap-1 text-brand-text hover:text-brand-hover transition-colors py-5 px-2 cursor-pointer"
                       onMouseEnter={() => setCursorType('view')}
                       onMouseLeave={() => setCursorType('default')}
                     >
@@ -209,7 +209,7 @@ export const Navbar: React.FC = () => {
                   ) : (
                     <a
                       href={item.href}
-                      className="relative flex items-center gap-1 text-brand-text hover:text-brand-hover transition-colors py-5 px-2 cursor-none"
+                      className="relative flex items-center gap-1 text-brand-text hover:text-brand-hover transition-colors py-5 px-2 cursor-pointer"
                       onMouseEnter={() => setCursorType('view')}
                       onMouseLeave={() => setCursorType('default')}
                     >
@@ -313,7 +313,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-4">
             {/* Search Icon */}
             <button
-              className="p-2.5 rounded-full hover:bg-brand-text/5 text-brand-text transition-colors flex items-center justify-center cursor-none"
+              className="p-2.5 rounded-full hover:bg-brand-text/5 text-brand-text transition-colors flex items-center justify-center cursor-pointer"
               aria-label="Search"
               onClick={() => {
                 const searchEl = document.getElementById('university-finder');
@@ -328,7 +328,7 @@ export const Navbar: React.FC = () => {
             {/* Book Consultation CTA Pill */}
             <button
               onClick={(e) => { e.preventDefault(); openModal(); }}
-              className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-brand-accent text-brand-bg hover:bg-brand-hover transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-none"
+              className="flex items-center gap-3 px-5 py-2.5 rounded-full bg-brand-accent text-brand-bg hover:bg-brand-hover transition-all duration-300 text-xs font-semibold tracking-widest uppercase group cursor-pointer"
               onMouseEnter={() => setCursorType('view')}
               onMouseLeave={() => setCursorType('default')}
             >
@@ -450,7 +450,7 @@ export const Navbar: React.FC = () => {
             ))}
             <button
               onClick={() => { closeMenu(); openModal(); }}
-              className="mt-4 px-6 py-3 rounded-full bg-brand-accent text-brand-bg hover:bg-brand-hover transition-all text-sm font-semibold tracking-widest uppercase cursor-none"
+              className="mt-4 px-6 py-3 rounded-full bg-brand-accent text-brand-bg hover:bg-brand-hover transition-all text-sm font-semibold tracking-widest uppercase cursor-pointer"
             >
               Book Consultation
             </button>

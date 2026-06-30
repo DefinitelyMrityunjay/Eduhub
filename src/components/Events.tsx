@@ -72,7 +72,7 @@ export const Events: React.FC = () => {
           </div>
           <a
             href="#all-events"
-            className="inline-flex items-center gap-2 border border-brand-text/20 px-6 py-3 text-[10px] font-semibold tracking-widest uppercase text-brand-text hover:bg-brand-text hover:text-brand-bg transition-all duration-300 cursor-none w-fit"
+            className="inline-flex items-center gap-2 border border-brand-text/20 px-6 py-3 text-[10px] font-semibold tracking-widest uppercase text-brand-text hover:bg-brand-text hover:text-brand-bg transition-all duration-300 cursor-pointer w-fit"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >
@@ -88,7 +88,7 @@ export const Events: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, delay: i * 0.1, ease }}
-              className="group border border-brand-text/10 hover:border-brand-text/30 transition-colors duration-300 overflow-hidden cursor-none"
+              className="group border border-brand-text/10 hover:border-brand-text/30 transition-colors duration-300 overflow-hidden cursor-pointer"
               onMouseEnter={() => setCursorType('view')}
               onMouseLeave={() => setCursorType('default')}
             >
@@ -126,7 +126,7 @@ export const Events: React.FC = () => {
                 </div>
 
                 <button
-                  className="mt-6 w-full py-3 border border-brand-text/20 text-[10px] font-semibold tracking-widest uppercase text-brand-text hover:bg-brand-text hover:text-brand-bg transition-all duration-300 group-hover:border-brand-text cursor-none"
+                  className="mt-6 w-full py-3 border border-brand-text/20 text-[10px] font-semibold tracking-widest uppercase text-brand-text hover:bg-brand-text hover:text-brand-bg transition-all duration-300 group-hover:border-brand-text cursor-pointer"
                   onMouseEnter={() => setCursorType('view')}
                   onMouseLeave={() => setCursorType('default')}
                 >
