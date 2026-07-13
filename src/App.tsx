@@ -12,7 +12,6 @@ import { UniversityShowcase } from './components/UniversityShowcase';
 import { Scholarships } from './components/Scholarships';
 import { Statistics } from './components/Statistics';
 import { Testimonials } from './components/Testimonials';
-import { Events } from './components/Events';
 import { ConsultationCTA } from './components/ConsultationCTA';
 import { Footer } from './components/Footer';
 
@@ -65,10 +64,7 @@ function App() {
           {/* 7. Student Testimonials — Horizontal drag scroll */}
           <Testimonials />
 
-          {/* 9. Events — Upcoming fairs/webinars/workshops */}
-          <Events />
-
-          {/* 10. Consultation CTA — Full-screen parallax banner */}
+          {/* 9. Consultation CTA — Full-screen parallax banner */}
           <ConsultationCTA />
         </main>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useCursor } from '../context/CursorContext';
 
@@ -8,19 +9,43 @@ export const Footer: React.FC = () => {
   const { setCursorType } = useCursor();
   const currentYear = new Date().getFullYear();
 
-  const cols = [
-    {
-      heading: 'Destinations',
-      links: ['Canada', 'USA', 'United Kingdom', 'Australia', 'Germany', 'France', 'New Zealand', 'Ireland', 'Italy', 'Poland', 'Denmark', 'Switzerland', 'Hungary', 'Malta', 'Latvia'],
-    },
-    {
-      heading: 'Services',
-      links: ['Career Counselling', 'University Selection', 'Visa Documentation', 'Student Visa', 'SOP & Resume', 'Spouse Visa', 'Visitor Visa', 'PR & Immigration', 'Onshore Services'],
-    },
-    {
-      heading: 'Company',
-      links: ['About TCA Edu Hub', 'Our Team', 'Success Stories', 'Events', 'Careers', 'Contact Us'],
-    },
+  const destinations = [
+    { label: 'Canada', href: '/study/canada' },
+    { label: 'USA', href: '/study/usa' },
+    { label: 'United Kingdom', href: '/study/uk' },
+    { label: 'Australia', href: '/study/australia' },
+    { label: 'Germany', href: '/study/germany' },
+    { label: 'France', href: '/study/france' },
+    { label: 'New Zealand', href: '/study/new-zealand' },
+    { label: 'Ireland', href: '/study/ireland' },
+    { label: 'Italy', href: '/study/italy' },
+    { label: 'Poland', href: '/study/poland' },
+    { label: 'Denmark', href: '/study/denmark' },
+    { label: 'Switzerland', href: '/study/switzerland' },
+    { label: 'Hungary', href: '/study/hungary' },
+    { label: 'Malta', href: '/study/malta' },
+    { label: 'Latvia', href: '/study/latvia' },
+  ];
+
+  const services = [
+    { label: 'Career Counselling', href: '/services/career-counselling' },
+    { label: 'University Selection', href: '/services/university-selection' },
+    { label: 'Visa Documentation', href: '/services/visa-documentation' },
+    { label: 'Student Visa', href: '/services/student-visa' },
+    { label: 'SOP & Resume', href: '/services/sop-resume' },
+    { label: 'Spouse Visa', href: '/services/spouse-visa' },
+    { label: 'Visitor Visa', href: '/services/visitor-visa' },
+    { label: 'PR & Immigration', href: '/services/pr-immigration' },
+    { label: 'Onshore Services', href: '/services/onshore-services' },
+  ];
+
+  const company = [
+    { label: 'About TCA Edu Hub', href: '/about' },
+    { label: 'Our Team', href: '/about#team' },
+    { label: 'Mission & Vision', href: '/about#mission' },
+    { label: 'Medical Admissions', href: '/medical' },
+    { label: 'School of Languages', href: '/languages' },
+    { label: 'MBBS Seat Matrix', href: '/seat-matrix' },
   ];
 
   return (
@@ -84,31 +109,37 @@ export const Footer: React.FC = () => {
           transition={{ duration: 1, delay: 0.1, ease }}
           className="grid grid-cols-2 md:grid-cols-4 gap-10"
         >
-          {cols.map((col) => (
-            <div key={col.heading} className="flex flex-col gap-4">
-              <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-muted mb-1">{col.heading}</span>
-              {col.links.map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="text-sm font-sans text-brand-text hover:text-brand-muted transition-colors cursor-pointer w-fit"
-                  onMouseEnter={() => setCursorType('view')}
-                  onMouseLeave={() => setCursorType('default')}
-                >
-                  {link}
-                </a>
-              ))}
-            </div>
-          ))}
+          <div className="flex flex-col gap-4">
+            <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Destinations</span>
+            {destinations.map((item) => (
+              <Link key={item.href} to={item.href} className="text-sm font-sans text-brand-text hover:text-brand-muted transition-colors cursor-pointer w-fit" onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
+                {item.label}
+              </Link>
+            ))}
+          </div>
 
-          {/* Social Column */}
+          <div className="flex flex-col gap-4">
+            <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Services</span>
+            {services.map((item) => (
+              <Link key={item.href} to={item.href} className="text-sm font-sans text-brand-text hover:text-brand-muted transition-colors cursor-pointer w-fit" onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Company</span>
+            {company.map((item) => (
+              <Link key={item.href} to={item.href} className="text-sm font-sans text-brand-text hover:text-brand-muted transition-colors cursor-pointer w-fit" onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
           <div className="flex flex-col gap-4">
             <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Follow Us</span>
-            {['Instagram', 'LinkedIn', 'YouTube', 'Facebook', 'X / Twitter'].map((s) => (
-              <a key={s} href="#" className="text-sm font-sans text-brand-text hover:text-brand-muted transition-colors cursor-pointer w-fit"
-                onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
-                {s}
-              </a>
+            {['Instagram', 'LinkedIn', 'YouTube', 'Facebook'].map((s) => (
+              <span key={s} className="text-sm font-sans text-brand-muted w-fit">{s}</span>
             ))}
           </div>
         </motion.div>
@@ -128,11 +159,7 @@ export const Footer: React.FC = () => {
           {/* Bottom Bar */}
           <div className="flex flex-col md:flex-row items-center justify-between text-[10px] tracking-wider uppercase font-semibold text-brand-muted gap-3">
             <span>© {currentYear} TCA Edu Hub. All rights reserved.</span>
-            <div className="flex items-center gap-6">
-              <a href="#privacy" className="hover:text-brand-text cursor-pointer" onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>Privacy Policy</a>
-              <a href="#terms" className="hover:text-brand-text cursor-pointer" onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>Terms of Use</a>
-              <span>Designed with Intention</span>
-            </div>
+            <span>Designed with Intention</span>
           </div>
         </motion.div>
 

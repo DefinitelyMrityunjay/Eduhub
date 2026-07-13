@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ArrowRight } from 'lucide-react';
 import { servicesData } from '../data/servicesData';
@@ -12,9 +12,8 @@ const ServiceCard: React.FC<{
   slug: string;
   title: string;
   tagline: string;
-  icon: string;
   index: number;
-}> = ({ slug, title, tagline, icon, index }) => {
+}> = ({ slug, title, tagline, index }) => {
   const { setCursorType } = useCursor();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
@@ -31,9 +30,6 @@ const ServiceCard: React.FC<{
         onMouseEnter={() => setCursorType('view')}
         onMouseLeave={() => setCursorType('default')}
       >
-        {/* Icon */}
-        <span className="text-4xl leading-none">{icon}</span>
-
         {/* Title */}
         <div className="flex flex-col gap-2 flex-1">
           <h3 className="font-heading text-xl font-medium text-brand-text tracking-tight leading-snug group-hover:text-brand-accent transition-colors duration-300">
@@ -56,27 +52,13 @@ const ServiceCard: React.FC<{
 
 export const Services: React.FC = () => {
   const { setCursorType } = useCursor();
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
-  const y = useTransform(scrollYProgress, [0, 1], ['3%', '-3%']);
-
   const [headingRef, headingInView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
   return (
     <section
       id="services"
-      ref={sectionRef}
-      className="relative py-28 md:py-40 px-8 md:px-16 bg-brand-bg overflow-hidden"
+      className="relative py-28 md:py-40 px-8 md:px-16 bg-brand-bg"
     >
-      {/* Subtle background texture */}
-      <motion.div
-        style={{ y }}
-        className="absolute inset-0 pointer-events-none"
-        aria-hidden
-      >
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-brand-text/[0.02] blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full bg-brand-text/[0.015] blur-3xl" />
-      </motion.div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
@@ -119,7 +101,6 @@ export const Services: React.FC = () => {
               slug={service.slug}
               title={service.title}
               tagline={service.tagline}
-              icon={service.icon}
               index={i}
             />
           ))}

@@ -40,7 +40,6 @@ export const Navbar: React.FC = () => {
       external: true,
       subItems: [
         { label: 'Welcome', href: '/' },
-        { label: 'Why Choose Us', href: '#why-us' },
         { label: 'Testimonials', href: '#testimonials' },
       ],
     },
@@ -52,7 +51,6 @@ export const Navbar: React.FC = () => {
         { label: 'Our Story', href: '/about' },
         { label: 'Our Team', href: '/about#team' },
         { label: 'Mission & Vision', href: '/about#mission' },
-        { label: 'Awards & Recognition', href: '/about#awards' },
       ],
     },
     {
@@ -73,7 +71,7 @@ export const Navbar: React.FC = () => {
     },
     {
       name: 'Study Abroad',
-      href: '#study-abroad',
+      href: '/#destinations',
       external: false,
       subItems: [
         { label: 'Study in Canada', href: '/study/canada' },
@@ -123,30 +121,6 @@ export const Navbar: React.FC = () => {
       ],
     },
     {
-      name: 'Study in India',
-      href: '#study-in-india',
-      external: false,
-      subItems: [
-        { label: 'Engineering', href: '#study-in-india' },
-        { label: 'Management (MBA)', href: '#study-in-india' },
-        { label: 'Medical (MBBS / BDS)', href: '#study-in-india' },
-        { label: 'Law', href: '#study-in-india' },
-        { label: 'Design & Arts', href: '#study-in-india' },
-      ],
-    },
-    {
-      name: 'Training & Placement',
-      href: '#training-placement',
-      external: false,
-      subItems: [
-        { label: 'Interview Preparation', href: '#training-placement' },
-        { label: 'Resume Building', href: '#training-placement' },
-        { label: 'Soft Skills Training', href: '#training-placement' },
-        { label: 'Campus Placement', href: '#training-placement' },
-        { label: 'Corporate Training', href: '#training-placement' },
-      ],
-    },
-    {
       name: 'School of Language',
       href: '/languages',
       external: true,
@@ -168,7 +142,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo Left */}
         <a
-          href="#"
+          href="/"
           className="flex items-center select-none py-4"
           onMouseEnter={() => setCursorType('view')}
           onMouseLeave={() => setCursorType('default')}

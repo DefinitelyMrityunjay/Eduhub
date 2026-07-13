@@ -59,10 +59,8 @@ const Hero: React.FC<{ country: CountryData }> = ({ country }) => {
           The Career Advisors (TCA) — Study Abroad Guide
         </motion.p>
 
-        {/* Flag + Name */}
         <div className="overflow-hidden mb-2">
-          <motion.div className="flex items-end gap-4 md:gap-6" initial={{ y: '110%' }} animate={{ y: '0%' }} transition={{ duration: 0.9, delay: 1.1, ease }}>
-            <span className="text-5xl md:text-7xl leading-none">{country.flag}</span>
+          <motion.div initial={{ y: '110%' }} animate={{ y: '0%' }} transition={{ duration: 0.9, delay: 1.1, ease }}>
             <h1 className="font-heading font-medium text-[clamp(56px,9vw,130px)] leading-[0.88] tracking-[-0.04em] uppercase text-white">
               Study in {country.name}
             </h1>
@@ -92,12 +90,11 @@ const Hero: React.FC<{ country: CountryData }> = ({ country }) => {
         <motion.div className="flex flex-col sm:flex-row gap-4" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.65, ease }}>
           <button
             onClick={(e) => { e.preventDefault(); openModal(); }}
-            className="flex items-center gap-3 px-8 py-4 bg-white text-brand-text text-xs font-semibold tracking-widest uppercase group transition-all duration-300 hover:bg-brand-bg cursor-pointer w-fit"
+            className="px-8 py-4 bg-white text-brand-text text-xs font-semibold tracking-widest uppercase transition-all duration-300 hover:bg-brand-bg cursor-pointer w-fit"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >
-            Book Free Consultation
-            <span className="transform transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+            Book a Free Consultation
           </button>
           <a href="tel:+911234567890" className="flex items-center gap-3 px-8 py-4 border border-white/30 text-white text-xs font-semibold tracking-widest uppercase hover:border-white transition-all duration-300 cursor-pointer w-fit"
             onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
@@ -130,7 +127,7 @@ const WhyStudy: React.FC<{ country: CountryData }> = ({ country }) => (
             <ul className="flex flex-col gap-2">
               {reason.points.map((point) => (
                 <li key={point} className="flex items-start gap-3 text-[13px] text-brand-muted font-sans leading-relaxed">
-                  <span className="text-brand-text mt-0.5 shrink-0">→</span>
+                  <span className="w-1 h-1 rounded-full bg-brand-text/30 shrink-0 mt-2" />
                   {point}
                 </li>
               ))}
@@ -288,7 +285,7 @@ const TCAServices: React.FC<{ country: CountryData }> = ({ country }) => (
       <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease }} className="grid grid-cols-1 sm:grid-cols-2 gap-0 border-t border-l border-brand-text/10">
         {tcaServices.map((service) => (
           <div key={service} className="border-r border-b border-brand-text/10 px-8 py-5 flex items-center gap-4">
-            <span className="text-brand-text font-semibold text-sm">✓</span>
+            <span className="w-1 h-1 rounded-full bg-brand-text/40 shrink-0" />
             <span className="text-[12px] font-semibold uppercase tracking-wider text-brand-muted">{service}</span>
           </div>
         ))}
@@ -313,17 +310,16 @@ const CTA: React.FC<{ country: CountryData }> = ({ country }) => {
             Your {country.name}<br />Journey Starts Here
           </h2>
           <p className="text-base md:text-lg text-brand-muted max-w-xl mx-auto font-sans leading-relaxed mb-12">
-            Book a free 1-on-1 session with our expert counsellors. Study. Work. Grow. Succeed.
+            Book a free 1-on-1 session with our expert counsellors — no obligation, just honest guidance on your options.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={(e) => { e.preventDefault(); openModal(); }}
-              className="flex items-center gap-3 px-8 py-4 bg-brand-text text-brand-bg text-xs font-semibold tracking-widest uppercase group transition-all duration-300 hover:bg-brand-hover cursor-pointer"
+              className="px-8 py-4 bg-brand-text text-brand-bg text-xs font-semibold tracking-widest uppercase transition-all duration-300 hover:bg-brand-hover cursor-pointer"
               onMouseEnter={() => setCursorType('view')}
               onMouseLeave={() => setCursorType('default')}
             >
-              Book Free Consultation
-              <span className="transform transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+              Book a Free Consultation
             </button>
             <a href="tel:+911234567890"
               className="flex items-center gap-3 px-8 py-4 border border-brand-text/30 text-brand-text text-xs font-semibold tracking-widest uppercase hover:border-brand-text transition-all duration-300 cursor-pointer"

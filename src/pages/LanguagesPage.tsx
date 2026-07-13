@@ -44,7 +44,6 @@ const whyPoints = [
 const languages = [
   {
     name: 'English',
-    flag: '🇬🇧',
     tagline: "Master the world's most widely spoken international language.",
     desc: 'Our English programs cover everything from foundational communication to advanced academic and professional writing, helping you succeed in higher education, global careers, and international certifications.',
     programs: [
@@ -63,7 +62,6 @@ const languages = [
   },
   {
     name: 'Punjabi',
-    flag: '🇮🇳',
     tagline: 'Stay Connected to Your Roots',
     desc: 'For families living abroad, language is one of the strongest connections to culture, identity, traditions, and heritage. Our Punjabi program is specially designed for children and adults outside India who wish to reconnect with their roots.',
     programs: [
@@ -80,7 +78,6 @@ const languages = [
   },
   {
     name: 'German',
-    flag: '🇩🇪',
     tagline: 'One of the most valuable languages for education and careers in Europe.',
     desc: 'Our German language courses cover all CEFR levels from A1 to C2, preparing you for study in Germany, employment opportunities, visa requirements, permanent residency, and professional development.',
     programs: ['A1 — Beginner', 'A2 — Elementary', 'B1 — Intermediate', 'B2 — Upper Intermediate', 'C1 — Advanced', 'C2 — Mastery'],
@@ -88,7 +85,6 @@ const languages = [
   },
   {
     name: 'French',
-    flag: '🇫🇷',
     tagline: 'French opens opportunities across Europe, Canada, Africa, and international organizations.',
     desc: 'From beginner conversation to advanced business French, our structured courses take you through grammar, listening, reading, writing, and travel communication across all CEFR levels.',
     programs: ['A1 — Beginner', 'A2 — Elementary', 'B1 — Intermediate', 'B2 — Upper Intermediate', 'C1 — Advanced', 'C2 — Mastery', 'Business French', 'Travel Communication'],
@@ -96,7 +92,6 @@ const languages = [
   },
   {
     name: 'Japanese',
-    flag: '🇯🇵',
     tagline: 'Japan offers excellent opportunities in technology, engineering, business, and higher education.',
     desc: 'Our Japanese courses cover Hiragana, Katakana, Kanji, grammar, vocabulary, listening, speaking, reading, and business Japanese with cultural etiquette. Preparation available for JLPT N5 through N1.',
     programs: ['Hiragana & Katakana', 'Kanji', 'Grammar & Vocabulary', 'Listening & Speaking', 'Business Japanese', 'Cultural Etiquette', 'JLPT N5 → N1 Preparation'],
@@ -104,7 +99,6 @@ const languages = [
   },
   {
     name: 'More Languages',
-    flag: '🌐',
     tagline: 'We offer coaching for several other international languages on demand.',
     desc: 'Based on student demand, we also provide coaching for Spanish, Italian, Korean, Mandarin Chinese, Arabic, Russian, Portuguese, Dutch, and many more. Contact us for upcoming batches and customized training.',
     programs: ['Spanish', 'Italian', 'Korean', 'Mandarin Chinese', 'Arabic', 'Russian', 'Portuguese', 'Dutch'],
@@ -164,13 +158,8 @@ const WhyCard: React.FC<{ title: string; desc: string; index: number }> = ({ tit
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: '-60px' }}
     transition={{ duration: 0.7, delay: index * 0.07, ease }}
-    className="flex flex-col gap-3 p-7 border border-brand-text/10 rounded-2xl bg-brand-bg hover:border-brand-text/25 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.1)] transition-all duration-400"
+    className="flex flex-col gap-3 p-7 border border-brand-text/10 bg-brand-bg hover:border-brand-text/25 transition-all duration-300"
   >
-    <div className="w-8 h-8 rounded-full bg-brand-text flex items-center justify-center shrink-0">
-      <svg className="w-4 h-4 stroke-brand-bg fill-none stroke-[2]" viewBox="0 0 24 24">
-        <path d="M5 13l4 4L19 7" />
-      </svg>
-    </div>
     <h3 className="font-heading text-lg font-medium text-brand-text tracking-tight leading-tight">{title}</h3>
     <p className="text-sm text-brand-muted font-sans leading-relaxed">{desc}</p>
   </motion.div>
@@ -184,14 +173,11 @@ const LanguageCard: React.FC<{ lang: typeof languages[0]; index: number }> = ({ 
     transition={{ duration: 0.8, delay: index * 0.06, ease }}
     className="flex flex-col gap-5 p-8 md:p-10 border border-brand-text/10 rounded-2xl bg-brand-bg hover:border-brand-text/20 hover:shadow-[0_16px_48px_-16px_rgba(0,0,0,0.12)] transition-all duration-400 h-full"
   >
-    <div className="flex items-center gap-3">
-      <span className="text-4xl leading-none">{lang.flag}</span>
-      <div>
-        <h3 className="font-heading text-2xl md:text-3xl font-medium text-brand-text tracking-tight leading-tight">
-          {lang.name}
-        </h3>
-        <p className="text-xs text-brand-muted font-semibold tracking-wider uppercase mt-0.5">{lang.tagline}</p>
-      </div>
+    <div>
+      <h3 className="font-heading text-2xl md:text-3xl font-medium text-brand-text tracking-tight leading-tight">
+        {lang.name}
+      </h3>
+      <p className="text-xs text-brand-muted font-semibold tracking-wider uppercase mt-1">{lang.tagline}</p>
     </div>
 
     <p className="text-sm text-brand-muted font-sans leading-relaxed">{lang.desc}</p>
@@ -432,7 +418,7 @@ const PageContent: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {['Complete syllabus coverage', 'Section-wise practice', 'Speaking sessions', 'Mock examinations', 'Time management techniques', 'Performance analysis', 'Individual mentoring', 'Proven test strategies'].map((item) => (
                 <div key={item} className="flex items-start gap-2 text-sm text-white/70 font-sans">
-                  <span className="text-white/40 shrink-0 mt-0.5">✓</span>
+                  <span className="w-1 h-1 rounded-full bg-white/30 shrink-0 mt-2" />
                   {item}
                 </div>
               ))}
@@ -534,7 +520,7 @@ const PageContent: React.FC = () => {
                   transition={{ duration: 0.5, delay: i * 0.06, ease }}
                   className="flex items-start gap-3 py-3 border-b border-brand-text/8"
                 >
-                  <span className="text-brand-accent mt-0.5 shrink-0 font-bold text-sm">→</span>
+                  <span className="w-1 h-1 rounded-full bg-brand-text/30 shrink-0 mt-2" />
                   <span className="text-sm text-brand-text/80 font-sans">{item}</span>
                 </motion.div>
               ))}
@@ -581,15 +567,6 @@ const PageContent: React.FC = () => {
             className="text-base text-white/50 font-sans leading-relaxed max-w-3xl"
           >
             Whether your dream is studying abroad, working internationally, achieving immigration goals, or reconnecting with your cultural heritage, we are committed to guiding you every step of the way.
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.4, ease }}
-            className="font-heading text-xl md:text-2xl font-medium text-white/80 uppercase tracking-wide mt-10 mb-10"
-          >
-            Learn. Communicate. Connect. Succeed.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

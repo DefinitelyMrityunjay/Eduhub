@@ -44,16 +44,6 @@ export const ConsultationCTA: React.FC = () => {
         style={{ opacity }}
         className="relative z-10 text-center px-8 md:px-16 max-w-5xl mx-auto"
       >
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1, ease }}
-          className="text-[10px] tracking-[0.3em] uppercase font-semibold text-white/50 mb-10"
-        >
-          TCA Edu Hub — Free Expert Consultation
-        </motion.p>
-
         <motion.h2
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,12 +91,11 @@ export const ConsultationCTA: React.FC = () => {
         >
           <button
             onClick={(e) => { e.preventDefault(); openModal(); }}
-            className="flex items-center gap-3 px-8 py-4 bg-white text-brand-text text-xs font-semibold tracking-widest uppercase group transition-all duration-300 hover:bg-brand-bg cursor-pointer"
+            className="px-8 py-4 bg-white text-brand-text text-xs font-semibold tracking-widest uppercase transition-all duration-300 hover:bg-brand-bg cursor-pointer"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >
-            Book Your Free Consultation
-            <span className="transform transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+            Book a Free Consultation
           </button>
           <a
             href="tel:+911234567890"

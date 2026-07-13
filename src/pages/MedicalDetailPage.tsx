@@ -638,7 +638,7 @@ const WhyTrust: React.FC<{ program: MedicalProgram }> = ({ program }) => (
       >
         {program.whyTrust.map((point) => (
           <li key={point} className="flex items-start gap-3 text-sm text-brand-text font-sans">
-            <span className="text-brand-accent font-bold shrink-0">✓</span>
+            <span className="w-1 h-1 rounded-full bg-brand-text/40 shrink-0 mt-2" />
             {point}
           </li>
         ))}

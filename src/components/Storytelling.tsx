@@ -147,7 +147,7 @@ const TeamCard: React.FC<{ member: TeamMember; index: number }> = ({ member, ind
 const Team: React.FC = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   return (
-    <section className="py-20 md:py-28 px-8 md:px-16 border-b border-brand-text/8">
+    <section id="team" className="py-20 md:py-28 px-8 md:px-16 border-b border-brand-text/8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
@@ -358,7 +358,7 @@ const mvItems: MVItem[] = [
 const MissionVision: React.FC = () => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   return (
-    <section className="py-20 md:py-28 px-8 md:px-16 border-b border-brand-text/8">
+    <section id="mission" className="py-20 md:py-28 px-8 md:px-16 border-b border-brand-text/8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}

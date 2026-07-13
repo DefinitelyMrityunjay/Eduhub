@@ -19,10 +19,9 @@ const ServiceCard: React.FC<{
   slug: string;
   title: string;
   tagline: string;
-  icon: string;
   whyChooseUs: string[];
   index: number;
-}> = ({ slug, title, tagline, icon, whyChooseUs, index }) => {
+}> = ({ slug, title, tagline, whyChooseUs, index }) => {
   const { setCursorType } = useCursor();
 
   return (
@@ -34,36 +33,30 @@ const ServiceCard: React.FC<{
     >
       <Link
         to={`/services/${slug}`}
-        className="group flex flex-col gap-6 p-8 md:p-10 border border-brand-text/10 rounded-2xl bg-brand-bg hover:border-brand-text/25 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.12)] transition-all duration-400 h-full cursor-pointer"
+        className="group flex flex-col gap-6 p-8 md:p-10 border border-brand-text/10 bg-brand-bg hover:border-brand-text/25 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.12)] transition-all duration-400 h-full cursor-pointer"
         onMouseEnter={() => setCursorType('view')}
         onMouseLeave={() => setCursorType('default')}
       >
-        {/* Icon + Title row */}
-        <div className="flex items-start gap-5">
-          <span className="text-5xl leading-none shrink-0">{icon}</span>
-          <div>
-            <h3 className="font-heading text-2xl md:text-3xl font-medium text-brand-text tracking-tight leading-tight group-hover:text-brand-accent transition-colors duration-300">
-              {title}
-            </h3>
-            <p className="mt-2 text-sm text-brand-muted font-sans leading-relaxed">
-              {tagline}
-            </p>
-          </div>
+        <div>
+          <h3 className="font-heading text-2xl md:text-3xl font-medium text-brand-text tracking-tight leading-tight group-hover:text-brand-accent transition-colors duration-300">
+            {title}
+          </h3>
+          <p className="mt-2 text-sm text-brand-muted font-sans leading-relaxed">
+            {tagline}
+          </p>
         </div>
 
-        {/* Key highlights */}
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
           {whyChooseUs.slice(0, 6).map((point) => (
             <li key={point} className="flex items-start gap-2 text-xs text-brand-text/70 font-sans">
-              <span className="text-brand-accent mt-0.5 shrink-0">✓</span>
+              <span className="w-1 h-1 rounded-full bg-brand-text/30 shrink-0 mt-1.5" />
               {point}
             </li>
           ))}
         </ul>
 
-        {/* CTA */}
-        <div className="flex items-center gap-2 text-[11px] uppercase tracking-widest font-semibold text-brand-text/50 group-hover:text-brand-accent transition-colors duration-300 pt-2 border-t border-brand-text/8">
-          <span>Explore Service</span>
+        <div className="flex items-center gap-2 text-[11px] uppercase tracking-widest font-semibold text-brand-text/40 group-hover:text-brand-accent transition-colors duration-300 pt-2 border-t border-brand-text/8">
+          <span>View Service</span>
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
         </div>
       </Link>
@@ -148,7 +141,6 @@ const PageContent: React.FC = () => {
                 slug={service.slug}
                 title={service.title}
                 tagline={service.tagline}
-                icon={service.icon}
                 whyChooseUs={service.whyChooseUs}
                 index={i}
               />

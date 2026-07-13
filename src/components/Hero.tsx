@@ -98,12 +98,11 @@ export const Hero: React.FC = () => {
         >
           <button
             onClick={(e) => { e.preventDefault(); openModal(); }}
-            className="flex items-center gap-3 px-8 py-4 bg-white text-brand-text text-xs font-semibold tracking-widest uppercase group transition-all duration-300 hover:bg-brand-bg cursor-pointer"
+            className="px-8 py-4 bg-white text-brand-text text-xs font-semibold tracking-widest uppercase transition-all duration-300 hover:bg-brand-bg cursor-pointer"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >
-            Book Your Free Consultation
-            <span className="transform transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+            Book a Free Consultation
           </button>
           <a
             href="tel:+911234567890"
