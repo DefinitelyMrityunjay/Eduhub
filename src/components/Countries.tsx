@@ -169,7 +169,7 @@ const CountryCard: React.FC<CardProps> = ({ name, image, tuition, workRights, po
       initial={{ opacity: 0, x: fromLeft ? -60 : 60 }}
       animate={inView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.9, delay: (index % 4) * 0.1, ease }}
-      className="relative overflow-hidden group cursor-pointer h-[60vh] min-h-[380px]"
+      className="relative overflow-hidden group cursor-pointer h-[56vw] min-h-[200px] sm:h-[60vh] sm:min-h-[380px]"
       onMouseEnter={() => setCursorType('view')}
       onMouseLeave={() => setCursorType('default')}
     >
@@ -191,7 +191,7 @@ const CountryCard: React.FC<CardProps> = ({ name, image, tuition, workRights, po
       {/* Content */}
       <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
         <div className="transform transition-transform duration-700 ease-[0.22,1,0.36,1] group-hover:-translate-y-2">
-          <span className="text-[9px] tracking-widest uppercase font-semibold text-white/50 mb-2 block">
+          <span className="text-[11px] tracking-widest uppercase text-white/50 mb-2 block">
             {tag}
           </span>
           <h3 className="font-heading font-medium text-3xl lg:text-4xl uppercase tracking-tight mb-4">
@@ -199,7 +199,7 @@ const CountryCard: React.FC<CardProps> = ({ name, image, tuition, workRights, po
           </h3>
 
           {/* Metrics — slide up on hover */}
-          <div className="overflow-hidden max-h-0 group-hover:max-h-40 transition-all duration-500 ease-[0.22,1,0.36,1]">
+          <div className="sm:overflow-hidden sm:max-h-0 sm:group-hover:max-h-40 transition-all duration-500 ease-[0.22,1,0.36,1]">
             <div className="flex flex-col gap-2 pt-2 border-t border-white/20">
               <div className="flex justify-between text-[11px]">
                 <span className="text-white/50 uppercase tracking-wider">Avg. Tuition</span>

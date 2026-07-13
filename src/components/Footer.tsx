@@ -80,18 +80,18 @@ export const Footer: React.FC = () => {
 
           {/* Newsletter */}
           <div className="flex flex-col gap-4 max-w-sm w-full">
-            <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-muted">Newsletter</span>
+            <span className="text-[11px] tracking-widest uppercase font-semibold text-brand-muted">Newsletter</span>
             <p className="text-sm text-brand-muted font-sans leading-relaxed">
               Scholarship alerts, deadlines, and study abroad guides — direct to your inbox.
             </p>
-            <div className="flex gap-0 border border-brand-text/20 hover:border-brand-text transition-colors duration-300">
+            <div className="flex flex-col sm:flex-row border border-brand-text/20 hover:border-brand-text transition-colors duration-300">
               <input
                 type="email"
                 placeholder="your@email.com"
                 className="flex-1 bg-transparent px-5 py-3.5 text-[12px] font-sans text-brand-text placeholder:text-brand-muted/50 outline-none tracking-wide"
               />
               <button
-                className="px-5 py-3.5 bg-brand-accent text-brand-bg text-[10px] font-semibold tracking-widest uppercase hover:bg-brand-hover transition-colors duration-300 cursor-pointer"
+                className="px-5 py-3.5 bg-brand-accent text-brand-bg text-[11px] font-semibold tracking-widest uppercase hover:bg-brand-hover transition-colors duration-300 cursor-pointer border-t border-brand-text/20 sm:border-t-0 sm:border-l"
                 onMouseEnter={() => setCursorType('view')}
                 onMouseLeave={() => setCursorType('default')}
               >
@@ -110,7 +110,7 @@ export const Footer: React.FC = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-10"
         >
           <div className="flex flex-col gap-4">
-            <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Destinations</span>
+            <span className="text-[11px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Destinations</span>
             {destinations.map((item) => (
               <Link key={item.href} to={item.href} className="text-sm font-sans text-brand-text hover:text-brand-muted transition-colors cursor-pointer w-fit" onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
                 {item.label}
@@ -119,7 +119,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-col gap-4">
-            <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Services</span>
+            <span className="text-[11px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Services</span>
             {services.map((item) => (
               <Link key={item.href} to={item.href} className="text-sm font-sans text-brand-text hover:text-brand-muted transition-colors cursor-pointer w-fit" onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
                 {item.label}
@@ -128,7 +128,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-col gap-4">
-            <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Company</span>
+            <span className="text-[11px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Company</span>
             {company.map((item) => (
               <Link key={item.href} to={item.href} className="text-sm font-sans text-brand-text hover:text-brand-muted transition-colors cursor-pointer w-fit" onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
                 {item.label}
@@ -137,7 +137,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-col gap-4">
-            <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Follow Us</span>
+            <span className="text-[11px] tracking-widest uppercase font-semibold text-brand-muted mb-1">Follow Us</span>
             {['Instagram', 'LinkedIn', 'YouTube', 'Facebook'].map((s) => (
               <span key={s} className="text-sm font-sans text-brand-muted w-fit">{s}</span>
             ))}

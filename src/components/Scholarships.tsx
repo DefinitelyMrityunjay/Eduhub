@@ -75,7 +75,7 @@ export const Scholarships: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8, ease }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 mb-24"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-16 mb-24"
         >
           <CountUp prefix="$" target={50} suffix="M+" label="Total Scholarships Secured" />
           <CountUp target={1000} suffix="+" label="Scholarship Programs We Track" />
@@ -104,7 +104,7 @@ export const Scholarships: React.FC = () => {
                 className="border-r border-b border-brand-text/10 p-8 group hover:bg-brand-text/[0.02] transition-colors duration-300"
               >
                 <div className="flex flex-col gap-4">
-                  <span className="text-[9px] tracking-widest uppercase font-semibold text-brand-muted">{s.country}</span>
+                  <span className="text-[11px] tracking-widest uppercase font-semibold text-brand-muted">{s.country}</span>
                   <h4 className="font-heading font-medium text-lg md:text-xl uppercase tracking-tight text-brand-text leading-tight">
                     {s.name}
                   </h4>

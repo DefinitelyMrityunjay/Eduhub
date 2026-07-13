@@ -98,7 +98,7 @@ export const ConsultationModal: React.FC = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 40, scale: 0.95 }}
               transition={{ type: 'spring', damping: 25, stiffness: 220, delay: 0.05 }}
-              className="relative w-full bg-[#121212] border border-white/10 text-white rounded-3xl p-8 md:p-10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden"
+              className="relative w-full bg-[#121212] border border-white/10 text-white rounded-3xl p-5 sm:p-8 md:p-10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Top accent light glow */}

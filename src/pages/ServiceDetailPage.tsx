@@ -129,7 +129,7 @@ const Intro: React.FC<{ service: ServiceData }> = ({ service }) => (
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.8, ease }}
       >
-        <p className="text-[10px] tracking-[0.3em] uppercase font-semibold text-brand-muted mb-5">Overview</p>
+        <p className="text-[11px] tracking-[0.3em] uppercase font-semibold text-brand-muted mb-5">Overview</p>
         <p className="text-base md:text-lg font-sans text-brand-text leading-relaxed">
           {service.intro}
         </p>

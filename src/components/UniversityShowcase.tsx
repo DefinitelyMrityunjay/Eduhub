@@ -15,14 +15,14 @@ interface University {
 }
 
 const universities: University[] = [
-  { name: 'McGill University', country: 'Canada', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?q=80&w=800&auto=format&fit=crop', speed: 1.2, className: 'h-[65vh]' },
-  { name: 'University of Oxford', country: 'UK', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=800&auto=format&fit=crop', speed: 0.8, className: 'h-[48vh] mt-16' },
-  { name: 'TU Munich', country: 'Germany', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=800&auto=format&fit=crop', speed: 1.5, className: 'h-[55vh] -mt-8' },
-  { name: 'Trinity College Dublin', country: 'Ireland', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1549918864-48ac978761a4?q=80&w=800&auto=format&fit=crop', speed: 1.0, className: 'h-[60vh] mt-10' },
-  { name: 'Univ. of Melbourne', country: 'Australia', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=800&auto=format&fit=crop', speed: 1.3, className: 'h-[50vh]' },
-  { name: 'ETH Zurich', country: 'Switzerland', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=800&auto=format&fit=crop', speed: 0.9, className: 'h-[62vh] mt-20' },
-  { name: 'Politecnico di Milano', country: 'Italy', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=800&auto=format&fit=crop', speed: 1.1, className: 'h-[55vh] -mt-4' },
-  { name: 'Sorbonne University', country: 'France', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1431274172761-fca41d930114?q=80&w=800&auto=format&fit=crop', speed: 1.4, className: 'h-[48vh] mt-12' },
+  { name: 'McGill University', country: 'Canada', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?q=80&w=800&auto=format&fit=crop', speed: 1.2, className: 'h-[260px] sm:h-[65vh]' },
+  { name: 'University of Oxford', country: 'UK', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=800&auto=format&fit=crop', speed: 0.8, className: 'h-[220px] sm:h-[48vh] sm:mt-16' },
+  { name: 'TU Munich', country: 'Germany', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=800&auto=format&fit=crop', speed: 1.5, className: 'h-[240px] sm:h-[55vh] sm:-mt-8' },
+  { name: 'Trinity College Dublin', country: 'Ireland', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1549918864-48ac978761a4?q=80&w=800&auto=format&fit=crop', speed: 1.0, className: 'h-[240px] sm:h-[60vh] sm:mt-10' },
+  { name: 'Univ. of Melbourne', country: 'Australia', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=800&auto=format&fit=crop', speed: 1.3, className: 'h-[220px] sm:h-[50vh]' },
+  { name: 'ETH Zurich', country: 'Switzerland', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=800&auto=format&fit=crop', speed: 0.9, className: 'h-[260px] sm:h-[62vh] sm:mt-20' },
+  { name: 'Politecnico di Milano', country: 'Italy', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=800&auto=format&fit=crop', speed: 1.1, className: 'h-[240px] sm:h-[55vh] sm:-mt-4' },
+  { name: 'Sorbonne University', country: 'France', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1431274172761-fca41d930114?q=80&w=800&auto=format&fit=crop', speed: 1.4, className: 'h-[220px] sm:h-[48vh] sm:mt-12' },
 ];
 
 const marqueeNames = [
@@ -72,7 +72,7 @@ const GridItem: React.FC<GridItemProps> = ({ name, country, rank, image, speed, 
             transition={{ duration: 0.8, ease }}
           />
           <div className="absolute bottom-5 left-5 right-5 text-white z-20">
-            <span className="text-[9px] tracking-widest uppercase text-white/60 font-semibold block mb-1">
+            <span className="text-[11px] tracking-widest uppercase text-white/60 font-semibold block mb-1">
               {country} — {rank}
             </span>
             <h4 className="font-heading font-medium text-lg md:text-xl uppercase tracking-tight leading-none">

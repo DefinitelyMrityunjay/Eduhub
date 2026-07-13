@@ -40,7 +40,7 @@ export const Navbar: React.FC = () => {
       external: true,
       subItems: [
         { label: 'Welcome', href: '/' },
-        { label: 'Testimonials', href: '#testimonials' },
+        { label: 'Testimonials', href: '/#testimonials' },
       ],
     },
     {
@@ -136,6 +136,7 @@ export const Navbar: React.FC = () => {
   ];
 
   return (
+    <>
     <nav
       className="fixed top-0 left-0 right-0 z-40 px-8 md:px-16 py-0 bg-brand-bg/95 backdrop-blur-sm border-b border-brand-text/5 transition-all duration-400 ease-[cubic-bezier(0.25,1,0.5,1)]"
     >
@@ -214,7 +215,7 @@ export const Navbar: React.FC = () => {
                           <div className="grid grid-cols-2 gap-x-6 relative z-10">
                             {item.sections!.map((section) => (
                               <div key={section.heading}>
-                                <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-text/35 mb-2.5 pb-1.5 border-b border-brand-text/8">
+                                <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-brand-text/35 mb-2.5 pb-1.5 border-b border-brand-text/8">
                                   {section.heading}
                                 </p>
                                 <div className="flex flex-col gap-0.5">
@@ -321,7 +322,7 @@ export const Navbar: React.FC = () => {
 
         {/* Mobile Menu Icon */}
         <button
-          className="lg:hidden flex flex-col gap-1.5 p-2"
+          className="lg:hidden flex flex-col gap-1.5 p-3"
           onClick={() => setIsMobileMenuOpen(true)}
           aria-label="Open Menu"
         >
@@ -329,12 +330,13 @@ export const Navbar: React.FC = () => {
           <span className="w-6 h-[2px] bg-brand-text" />
         </button>
       </div>
+    </nav>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
+    {/* Mobile Menu Overlay */}
+    {isMobileMenuOpen && (
         <div className="fixed inset-0 z-50 bg-brand-bg flex flex-col items-center justify-start pt-20 p-8 lg:hidden overflow-y-auto">
           <button
-            className="absolute top-6 right-8 p-2"
+            className="absolute top-6 right-8 p-3"
             onClick={closeMenu}
             aria-label="Close Menu"
           >
@@ -368,7 +370,7 @@ export const Navbar: React.FC = () => {
                   <div className="flex flex-col items-center gap-3 pb-3 w-full">
                     {item.sections.map((section) => (
                       <div key={section.heading} className="w-full text-center">
-                        <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-brand-text/35 mb-1.5">
+                        <p className="text-[11px] uppercase tracking-[0.2em] font-bold text-brand-text/35 mb-1.5">
                           {section.heading}
                         </p>
                         {section.items.map((sub) =>
@@ -377,7 +379,7 @@ export const Navbar: React.FC = () => {
                               key={sub.label}
                               to={sub.href}
                               onClick={closeMenu}
-                              className="block text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-1"
+                              className="block text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-2.5"
                             >
                               {sub.label}
                             </Link>
@@ -386,7 +388,7 @@ export const Navbar: React.FC = () => {
                               key={sub.label}
                               href={sub.href}
                               onClick={closeMenu}
-                              className="block text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-1"
+                              className="block text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-2.5"
                             >
                               {sub.label}
                             </a>
@@ -403,7 +405,7 @@ export const Navbar: React.FC = () => {
                           key={sub.label}
                           to={sub.href}
                           onClick={closeMenu}
-                          className="text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-1"
+                          className="text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-2.5"
                         >
                           {sub.label}
                         </Link>
@@ -412,7 +414,7 @@ export const Navbar: React.FC = () => {
                           key={sub.label}
                           href={sub.href}
                           onClick={closeMenu}
-                          className="text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-1"
+                          className="text-sm text-brand-text/60 hover:text-brand-hover transition-colors py-2.5"
                         >
                           {sub.label}
                         </a>
@@ -431,6 +433,6 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
       )}
-    </nav>
+    </>
   );
 };

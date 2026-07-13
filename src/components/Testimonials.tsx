@@ -138,7 +138,7 @@ export const Testimonials: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: i * 0.1, ease }}
-            className="shrink-0 w-[320px] md:w-[400px] border border-brand-text/10 hover:border-brand-text/30 transition-colors duration-300 flex flex-col p-8 gap-6"
+            className="shrink-0 w-[min(82vw,320px)] md:w-[400px] border border-brand-text/10 hover:border-brand-text/30 transition-colors duration-300 flex flex-col p-8 gap-6"
           >
             {/* Quote mark */}
             <span className="font-heading text-6xl leading-none text-brand-text/10 select-none">"</span>
