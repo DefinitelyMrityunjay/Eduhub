@@ -4,6 +4,8 @@ import { useModal } from '../context/ModalContext';
 import { useCursor } from '../context/CursorContext';
 import { X, Check } from 'lucide-react';
 
+const WEB3FORMS_ACCESS_KEY = 'c9699c0e-1bb4-42b8-9eee-3a84792a5c68';
+
 export const ConsultationModal: React.FC = () => {
   const { isModalOpen, closeModal } = useModal();
   const { setCursorType } = useCursor();
@@ -19,21 +21,46 @@ export const ConsultationModal: React.FC = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    // Simulate API request
-    setTimeout(() => {
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `New Consultation Request from ${formData.name}`,
+          from_name: 'TCA Edu Hub Website',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          target_country: destinations.find((d) => d.value === formData.country)?.label ?? formData.country,
+          education_level: levels.find((l) => l.value === formData.level)?.label ?? formData.level,
+          message: formData.message,
+        }),
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        setIsSuccess(true);
+      } else {
+        setError('Something went wrong. Please try again or call us directly.');
+      }
+    } catch {
+      setError('Something went wrong. Please try again or call us directly.');
+    } finally {
       setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1500);
+    }
   };
 
   const handleClose = () => {
@@ -41,6 +68,7 @@ export const ConsultationModal: React.FC = () => {
     // Reset state after animation finishes
     setTimeout(() => {
       setIsSuccess(false);
+      setError(null);
       setFormData({
         name: '',
         email: '',
@@ -262,6 +290,11 @@ export const ConsultationModal: React.FC = () => {
                           onMouseLeave={() => setCursorType('default')}
                         />
                       </div>
+
+                      {/* Error */}
+                      {error && (
+                        <p className="text-xs text-red-400 font-sans">{error}</p>
+                      )}
 
                       {/* Submit */}
                       <div className="pt-2">

@@ -133,6 +133,16 @@ export const Navbar: React.FC = () => {
         { label: 'Punjabi Heritage', href: '/languages#languages' },
       ],
     },
+    {
+      name: 'Training & Placement',
+      href: '/training-placement',
+      external: true,
+      subItems: [
+        { label: 'Technical Training', href: '/training-placement#training-domains' },
+        { label: 'Placement Preparation', href: '/training-placement#placement-prep' },
+        { label: 'Our Journey', href: '/training-placement#journey' },
+      ],
+    },
   ];
 
   return (
@@ -151,7 +161,7 @@ export const Navbar: React.FC = () => {
           <img
             src="/logo.png"
             alt="TCA Edu Hub"
-            className="h-14 md:h-16 w-auto object-contain"
+            className="h-16 md:h-20 w-auto object-contain"
           />
         </a>
 

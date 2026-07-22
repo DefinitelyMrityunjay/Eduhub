@@ -100,7 +100,7 @@ const countries: Country[] = [
   {
     name: 'Poland',
     flag: '🇵🇱',
-    image: 'https://images.unsplash.com/photo-1502103479002-2596f7bf72db?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1553422734-fd8dd260a116?q=80&w=800&auto=format&fit=crop',
     tuition: '€2K–€6K/yr',
     workRights: '20 hrs/week',
     postStudyVisa: 'EU Job Access',
@@ -136,7 +136,7 @@ const countries: Country[] = [
   {
     name: 'Malta',
     flag: '🇲🇹',
-    image: 'https://images.unsplash.com/photo-1580687774429-97ec2261764b?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1611157228462-5a5e2eb9e314?q=80&w=800&auto=format&fit=crop',
     tuition: '€5K–€12K/yr',
     workRights: '20 hrs/week',
     postStudyVisa: 'EU Job Access',
@@ -145,7 +145,7 @@ const countries: Country[] = [
   {
     name: 'Latvia',
     flag: '🇱🇻',
-    image: 'https://images.unsplash.com/photo-1583573636152-f91bfa13eca1?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1569744829292-d78b14e125ee?q=80&w=800&auto=format&fit=crop',
     tuition: '€2K–€6K/yr',
     workRights: '20 hrs/week',
     postStudyVisa: 'EU Job Access',

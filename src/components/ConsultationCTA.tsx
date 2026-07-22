@@ -98,12 +98,12 @@ export const ConsultationCTA: React.FC = () => {
             Book a Free Consultation
           </button>
           <a
-            href="tel:+911234567890"
+            href="tel:+917973303699"
             className="flex items-center gap-3 px-8 py-4 border border-white/30 text-white text-xs font-semibold tracking-widest uppercase hover:border-white transition-all duration-300 cursor-pointer"
             onMouseEnter={() => setCursorType('view')}
             onMouseLeave={() => setCursorType('default')}
           >
-            Call Us: +91 12345 67890
+            Call Us: +91 79733 03699
           </a>
         </motion.div>
       </motion.div>

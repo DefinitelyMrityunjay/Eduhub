@@ -15,19 +15,30 @@ interface University {
 }
 
 const universities: University[] = [
-  { name: 'McGill University', country: 'Canada', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?q=80&w=800&auto=format&fit=crop', speed: 1.2, className: 'h-[260px] sm:h-[65vh]' },
-  { name: 'University of Oxford', country: 'UK', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=800&auto=format&fit=crop', speed: 0.8, className: 'h-[220px] sm:h-[48vh] sm:mt-16' },
-  { name: 'TU Munich', country: 'Germany', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=800&auto=format&fit=crop', speed: 1.5, className: 'h-[240px] sm:h-[55vh] sm:-mt-8' },
-  { name: 'Trinity College Dublin', country: 'Ireland', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1549918864-48ac978761a4?q=80&w=800&auto=format&fit=crop', speed: 1.0, className: 'h-[240px] sm:h-[60vh] sm:mt-10' },
-  { name: 'Univ. of Melbourne', country: 'Australia', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=800&auto=format&fit=crop', speed: 1.3, className: 'h-[220px] sm:h-[50vh]' },
-  { name: 'ETH Zurich', country: 'Switzerland', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=800&auto=format&fit=crop', speed: 0.9, className: 'h-[260px] sm:h-[62vh] sm:mt-20' },
-  { name: 'Politecnico di Milano', country: 'Italy', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=800&auto=format&fit=crop', speed: 1.1, className: 'h-[240px] sm:h-[55vh] sm:-mt-4' },
-  { name: 'Sorbonne University', country: 'France', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1431274172761-fca41d930114?q=80&w=800&auto=format&fit=crop', speed: 1.4, className: 'h-[220px] sm:h-[48vh] sm:mt-12' },
+  { name: 'George Brown College', country: 'Canada', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1569959220744-ff553533f492?q=80&w=800&auto=format&fit=crop', speed: 1.2, className: 'h-[260px] sm:h-[65vh]' },
+  { name: 'London Metropolitan University', country: 'UK', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?q=80&w=800&auto=format&fit=crop', speed: 0.8, className: 'h-[220px] sm:h-[48vh] sm:mt-16' },
+  { name: 'GISMA University of Applied Sciences', country: 'Germany', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=800&auto=format&fit=crop', speed: 1.5, className: 'h-[240px] sm:h-[55vh] sm:-mt-8' },
+  { name: 'Texas State University', country: 'USA', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1549918864-48ac978761a4?q=80&w=800&auto=format&fit=crop', speed: 1.0, className: 'h-[240px] sm:h-[60vh] sm:mt-10' },
+  { name: 'Seneca Polytechnic', country: 'Canada', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=800&auto=format&fit=crop', speed: 1.3, className: 'h-[220px] sm:h-[50vh]' },
+  { name: 'University of Hertfordshire', country: 'UK', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1527668752968-14dc70a27c95?q=80&w=800&auto=format&fit=crop', speed: 0.9, className: 'h-[260px] sm:h-[62vh] sm:mt-20' },
+  { name: 'SRH University', country: 'Germany', rank: 'Top Partner', image: 'https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=800&auto=format&fit=crop', speed: 1.1, className: 'h-[240px] sm:h-[55vh] sm:-mt-4' },
+  { name: 'San Francisco State University', country: 'USA', rank: 'Top Ranked', image: 'https://images.unsplash.com/photo-1431274172761-fca41d930114?q=80&w=800&auto=format&fit=crop', speed: 1.4, className: 'h-[220px] sm:h-[48vh] sm:mt-12' },
 ];
 
 const marqueeNames = [
-  'McGill', 'Oxford', 'TU Munich', 'Trinity Dublin', 'Melbourne', 'ETH Zurich', 'Politecnico Milano', 'Sorbonne',
-  'York University', 'University of Toronto', 'Heidelberg', 'HEC Paris', 'UC Dublin', 'Univ. of Warsaw', 'Riga Technical',
+  // Canada
+  'Laurentian University', 'Algoma University', 'NorQuest College', 'Centennial College', 'Flemming College',
+  'Focus College', 'George Brown', 'St. Clair College', 'Sheridan College', 'Seneca Polytechnic',
+  // USA
+  'St. Cloud State University', 'Central Michigan University', 'Texas State University',
+  'South Dakota State University', 'San Francisco State University',
+  // UK
+  'London Metropolitan University', 'Regent College London', 'Richmond American University London',
+  'University of Brighton', 'University of Hertfordshire',
+  // Germany
+  'GISMA University of Applied Sciences', 'SRH University',
+  // Other partners
+  'Lancaster University', 'Alte University Georgia', 'Samarkand State Medical University', 'Tashkent Medical University',
 ];
 
 interface GridItemProps extends University {
@@ -107,7 +118,7 @@ export const UniversityShowcase: React.FC = () => {
             </h2>
           </div>
           <p className="text-sm md:text-base text-brand-muted max-w-sm font-sans leading-relaxed">
-            1,500+ university partners across 15 countries. We connect you with institutions that shape global leaders.
+            25+ university partners across 6 countries. We connect you with institutions that shape global leaders.
           </p>
         </motion.div>
 

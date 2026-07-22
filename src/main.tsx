@@ -11,6 +11,7 @@ import MedicalPage from './pages/MedicalPage.tsx'
 import MedicalDetailPage from './pages/MedicalDetailPage.tsx'
 import SeatMatrixPage from './pages/SeatMatrixPage.tsx'
 import LanguagesPage from './pages/LanguagesPage.tsx'
+import TrainingPlacementPage from './pages/TrainingPlacementPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -25,6 +26,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/medical/:slug" element={<MedicalDetailPage />} />
         <Route path="/seat-matrix" element={<SeatMatrixPage />} />
         <Route path="/languages" element={<LanguagesPage />} />
+        <Route path="/training-placement" element={<TrainingPlacementPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

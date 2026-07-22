@@ -70,9 +70,9 @@ export const Footer: React.FC = () => {
                 onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
                 hello@tcaeduhub.com
               </a>
-              <a href="tel:+911234567890" className="text-[11px] text-brand-text tracking-wide hover:text-brand-muted transition-colors cursor-pointer"
+              <a href="tel:+917973303699" className="text-[11px] text-brand-text tracking-wide hover:text-brand-muted transition-colors cursor-pointer"
                 onMouseEnter={() => setCursorType('view')} onMouseLeave={() => setCursorType('default')}>
-                +91 12345 67890
+                +91 79733 03699
               </a>
               <span className="text-[11px] text-brand-muted tracking-wide">Mumbai · Delhi · Bangalore · London</span>
             </div>

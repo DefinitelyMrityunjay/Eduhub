@@ -9,7 +9,6 @@ import { Countries } from './components/Countries';
 
 import { Services } from './components/Services';
 import { UniversityShowcase } from './components/UniversityShowcase';
-import { Scholarships } from './components/Scholarships';
 import { Statistics } from './components/Statistics';
 import { Testimonials } from './components/Testimonials';
 import { ConsultationCTA } from './components/ConsultationCTA';
@@ -57,9 +56,6 @@ function App() {
 
           {/* 5. University Showcase — Elite institutions grid + marquee */}
           <UniversityShowcase />
-
-          {/* 6. Scholarships — Programs and count-up metrics */}
-          <Scholarships />
 
           {/* 7. Student Testimonials — Horizontal drag scroll */}
           <Testimonials />
